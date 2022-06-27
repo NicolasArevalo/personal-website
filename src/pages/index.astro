@@ -1,0 +1,212 @@
+---
+// Component Imports
+import BaseHead from '@components/BaseHead.astro';
+import NavBar from '@components/NavBar.astro';
+import Banner from '@components/Banner.astro';
+import links from '@components/links';
+import Footer from '@components/Footer.astro';
+import MiniBlogPrev from '@components/MiniBlogPrev.astro';
+import Slider from '@components/Slider.astro';
+
+import photo from '@pages/recortadayo.png';
+
+
+// Component Script:
+let title = 'Nicolás Arévalo';
+let description = 'Hola! Soy Nicolás. Soy ingeniero de software enfocado ahora en desarrollo web; aunque me gustan muchas más cosas que puedes conocer aquí.';
+
+const host = links.host
+
+---
+
+<html lang="es">
+
+<head>
+	<BaseHead {title} {description} />
+
+	<style>
+		.content {
+			margin-top: 1rem;
+		}
+
+		.intro {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding-bottom: 2rem;
+		}
+
+		.intro>* {
+			margin: 0;
+		}
+
+		h1 {
+			text-align: center;
+			padding-bottom: .5em;
+		}
+
+		ul {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			width: max(60px, 300px);
+		}
+
+		li {
+			list-style: none;
+		}
+
+		.yo {
+			width: 200px;
+			clip-path: circle(48% at 50% 50%);
+		}
+
+		.wrapper-navegacion {
+			position: relative;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			width: 100%;
+			gap: 1em;
+			height: auto;
+			align-items: center;
+			justify-content: space-between;
+			padding: 1em;
+		}
+
+		@media(max-width: 760px) {
+			.wrapper-navegacion {
+				justify-content: flex-start;
+			}
+
+			.yo {
+				width: 150px;
+			}
+
+			.content {
+				margin-top: 0rem;
+			}
+		}
+
+		.wrapper-navegacion::after {
+			content: '';
+			border-radius: var(--br);
+			z-index: -1;
+			position: absolute;
+			top: -.1em;
+			bottom: 0;
+			left: -.4em;
+			right: 0;
+			border: 3px ridge rgba(var(--theme-accent-rgb), var(--theme-accent-opacity));
+			width: 100%;
+			height: 100%;
+			animation: beating 3s alternate .8s infinite;
+		}
+
+		@keyframes beating {
+
+			100% {
+				opacity: 0;
+				transform: scaleX(1.05) scaleY(1.1);
+			}
+		}
+
+		.wrapper-navegacion a {
+			font-weight: bold;
+		}
+
+		.logo {
+			width: 1rem;
+			height: 1rem;
+		}
+
+		small {
+			text-align: center;
+			width: 100%;
+		}
+
+		.wrapper-fotos {
+			margin-top: 3em;
+
+		}
+
+		.slider__img {
+			scroll-snap-align: start;
+			border-radius: var(--br);
+			width: 210px;
+			object-fit: contain;
+
+		}
+
+		.sliding {
+			animation-name: slide;
+			animation-duration: 20s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
+
+		@keyframes slide {
+
+			10% {
+				transform: translateX(0);
+			}
+
+			30% {
+				transform: translateX(-100%);
+			}
+
+			50% {
+				transform: translateX(-200%);
+			}
+
+			70% {
+				transform: translateX(-300%);
+			}
+
+			90% {
+				transform: translateX(-400%);
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<Banner />
+	<NavBar />
+	<div class="wrapper">
+		<main class="content">
+			<section class="intro">
+				<img src="/assets/recortadayo.png" class="yo" alt="">
+				<h1 class="latest">{title}</h1>
+				<p>{description} Me gusta: </p>
+			</section>
+		</main>
+		<section class="wrapper-navegacion" aria-label="navegacion">
+
+			<a href={host+'/blog'} class="hl">Escribir</a>
+			<a href={host+'/sobre-mi'} class="hl">Ver películas</a>
+			<a href={host+'/profesional'} class="hl">Crear páginas web</a>
+			<a href={host+'/voz'} class="hl">Rapear</a>
+			<a href={host+'/contacto'} class="hl">Hacer streams</a>
+
+		</section>
+		<MiniBlogPrev />
+		<section class="wrapper-fotos" aria-label="">
+			<h4>Fotos que he tomado...</h4>
+			<Slider>
+				<img class="slider__img sliding" src={photo} alt="">
+				<img class="slider__img sliding" src={photo} alt="">
+				<img class="slider__img sliding" src={photo} alt="">
+				<img class="slider__img sliding" src={photo} alt="">
+				<img class="slider__img sliding" src={photo} alt="">
+				<img class="slider__img sliding" src={photo} alt="">
+				<img class="slider__img sliding" src={photo} alt="">
+			</Slider>
+		</section>
+
+	</div>
+	<Footer />
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+---
+import links from '@components/links.js'
+---
+<footer class="wrapper">
+    <ul>
+        <li><a href={links.host+'/blog'}>Blog</a></li>
+        <li><a href={links.bmac}>Buy me a coffe</a></li>
+        <li><a href={links.correo}>Correo</a></li>
+        <li><a href={links.github}>Github</a></li>
+        <li><a href={links.gp}>Google podcast</a></li>
+        <li><a href={links.instagram}>Instagram</a></li>
+        <li><a href={links.spotify}>Spotify</a></li>
+        <li><a href={links.twitch}>Twitch</a></li>
+        <li><a href={links.twitter}>Twitter</a></li>
+        <li><a href={links.voice}>Voice 123</a></li>
+        <li><a href={links.youtube}>Youtube</a></li>
+    </ul>
+    <div> <span>I C K K C K.</span><span> &#169 Nicolás
+            Arévalo - 2022</span> </div>
+</footer>
+
+<style>
+    footer {
+        border-top: 3px solid var(--theme-divider);
+        margin-top: 1.5em;
+        padding-top: 1.5em;
+        margin-bottom: 3em;
+        width: 100%;
+        color: var(--theme-text-light);
+
+    }
+
+    div {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        margin-top: 2em;
+    }
+
+    div a {
+        font-size: .7em;
+        color: var(--theme-text-light);
+    }
+
+    div span {
+        font-size: .7em;
+    }
+
+    ul {
+        font-size: .9em;
+        line-height: 2em;
+        columns: 140px auto;
+        column-count: 3;
+    }
+
+    li {}
+
+    li a {
+        color: var(--theme-text-light);
+    }
+
+    @media (max-width: 760px) {
+        div {
+            flex-flow: column wrap;
+        }
+
+        div a {
+            font-size: .7em;
+            color: var(--theme-text-light);
+        }
+
+        div span {
+            font-size: .7em;
+        }
+    }
+</style>

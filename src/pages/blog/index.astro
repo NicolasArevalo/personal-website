@@ -1,0 +1,36 @@
+---
+import BlogPostPreview from '../../components/BlogPostPreview.astro';
+import Basic from '../../layouts/Basic.astro';
+
+// Component Script:
+let title = 'Blog';
+let description = 'Hola! Soy Nicolás. Soy ingeniero de software y desarrollador web, aunque me gustan muchas más cosas que puedes conocer en un solo lugar: aquí.';
+
+// Data Fetching: List all Markdown posts in the repo.
+
+let allPosts = await Astro.glob('./*.md');
+allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
+
+---
+<Basic title={title} description={description}>
+
+	<main class="content">
+		<h1>Mis publicaciones ({allPosts.length})</h1>
+		<section aria-label="Blog post list">
+			{allPosts.map((p) => <BlogPostPreview post={p} />)}
+		</section>
+	</main>
+
+</Basic>
+
+<style>
+	.content{
+		margin-top: 1.3em;
+	}
+	@media (max-width: 760px){
+		h1{
+			font-size: 2.4em;
+		}
+	}
+</style>
+

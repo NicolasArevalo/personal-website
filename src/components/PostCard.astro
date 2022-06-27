@@ -1,0 +1,48 @@
+---
+export interface Props {
+    post: any;
+}
+
+const { post } = Astro.props;
+---
+
+<article class="post-card">
+    <header>
+        <p class="publish-date">{post.frontmatter.publishDate}</p>
+        <a href={post.url}>
+            <h1 class="title">{post.frontmatter.title}</h1>
+        </a>
+    </header>
+    <p>{post.frontmatter.description}</p>
+    <a href={post.url}>Leer más</a>
+</article>
+
+<style>
+    .post-card {
+        width: 210px;
+        height: 300px;
+    }
+
+    header p {
+        font-size: .8rem;
+    }
+
+    header .title {
+        font-size: 1.6em;
+    }
+
+    p {
+        font-size: .75em;
+    }
+
+    .post-card>a {
+        font-size: .8em;
+    }
+
+    @media (max-width: 760px) {
+        .post-card {
+            width: 165px;
+            height: 250px;
+        }
+    }
+</style>

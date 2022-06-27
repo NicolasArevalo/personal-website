@@ -1,0 +1,44 @@
+---
+import PostCard from '@components/PostCard.astro'
+let allPosts = await Astro.glob('../pages/blog/*.md');
+allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
+let latestPosts = allPosts.slice(0, 3);
+---
+
+<section class="MiniblogPrev">
+    <h4>Publicaciones recientes...</h4>
+    <div class="selection">
+        {latestPosts.map( (p) =>
+        <PostCard post={p} />)}
+    </div>
+</section>
+
+<style>
+    .MiniblogPrev {
+        display: flex;
+        flex-flow: column wrap;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        margin: 2em 0;
+    }
+
+    .selection {
+        display: flex;
+        justify-content: space-between;
+        gap: .8em;
+    }
+
+    @media (max-width: 760px) {
+        .selection {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .MiniblogPrev {
+            display: flex;
+            flex-flow: column wrap;
+            max-width: 300px;
+        }
+    }
+</style>

@@ -1,0 +1,67 @@
+---
+import BaseHead from '@components/BaseHead.astro';
+import NavBar from '@components/NavBar.astro';
+import Footer from '@components/Footer.astro';
+
+export interface Props {
+    title: string;
+    description: string;
+}
+
+const { title, description } = Astro.props;
+
+---
+
+
+<html lang={'es'}>
+	<head>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-lucario.css"/>
+		<BaseHead {title} {description}/>
+		<style>
+			header {
+				width: 100%;
+				height: 100%;
+				background-color: var(--theme-bg-offset);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.content {
+				margin-top: 4rem;
+				margin-bottom: 8rem;
+			}
+
+			.content :global(main > * + *) {
+				margin-top: 1rem;
+			}
+
+			.intro {
+				padding-bottom: 4rem;
+				margin-bottom: 2rem;
+				border-bottom: 4px solid var(--theme-divider);
+			}
+
+			.intro > * {
+				margin: 0;
+			}
+
+			.latest {
+				font-size: 2.5rem;
+				font-weight: 800;
+			}
+
+			p{
+				background-color: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<NavBar />
+		<div class="wrapper">
+            <slot />
+        </div>
+		<Footer />
+	</body>
+</html>

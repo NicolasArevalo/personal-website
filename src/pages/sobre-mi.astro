@@ -1,0 +1,118 @@
+---
+import Basic from '@layouts/Basic.astro'
+import links from '@components/links'
+---
+
+<Basic title='Sobre mí' description="En esta sección me presento, quién soy y qué hago, incluso porqué lo hago xd">
+    <h1>Sobre mí</h1>
+    <p>Hola, soy Nicolás. Soy un apasionado de la tecnología y de la vida que 
+        se creó un blog para compartir todo lo que
+        tiene por decir. Actualmente tengo 20 años pero un carácter de 40 xD.
+
+        Si quieres conocer más acerca de mi vida profesional, te recomiendo ir a mi <a href={links.host+"/profesional"}> <i>portafolio</i></a>, donde comparto mis
+        proyectos.</p>
+
+    <section>
+        <h4>¿Cómo llegué hasta aquí?</h4>
+        <p>Siempre he sentido las ganas de compartir lo que me apasiona. Cuando encuentro una canción que me eriza la
+            piel,
+            o
+            una frase que me toca el corazón, quiero compartirlo, y mis víctimas siempre son las mismas, mi mamá o mi
+            hermana, a
+            veces un par de primos (depende lo que sea), me escuchan pero no sienten mi mensaje, y es verdad, las cosas
+            que
+            me
+            gustan no tienen que gustarle a ellos, pero entonces siento que necesito compartirlo y no tengo con quien.
+            Así
+            que
+            decidí encontrar una comunidad que de verdad quiera escucharme. ¿Podré? Lo averiguaremos.
+        </p>
+    </section>
+    <section>
+        <h4>Un poco de historia</h4>
+        <p> Nací en la ciudad de Bogotá. Viví en Suba (una localidad) hasta 6° de bachillerato. Ahí pasé a vivir a Bosa
+            por
+            otros 3 años, y luego vine al Huila. Desde siempre me ha gustado la tecnología. Mi familia me apoyaba
+            diciendo
+            que
+            yo sabía, incluso cosas que no sabía: "Pregúntele a Nico que él es el duro.", a pesar de tener 8 años y
+            probablemente no saber sino reiniciar las cosas :v. Sin embargo, esa sensación me motivó a seguir
+            profundizando
+            de
+            forma empírica durante mi vida, hasta que llegué a grado 10°, dónde realicé un técnico en sistemas en el
+            SENA
+            (convenio con la institución en donde estudié). En 11 terminé el técnico, y también conocí Platzi, donde
+            empecé
+            a ir
+            más profundo con el curso de fundamentos de ingeniería de software. El año siguiente (2018) ingresé a la
+            Universidad
+            Surcolombiana a ingeniería de software. Y poco a poco llegué hasta aquí.
+        </p>
+    </section>
+    <section>
+        <h4>Top de películas</h4>
+        <ol>
+            <li>El origen - Inception (la primera peli que me hizo 🤯)</li>
+            <li>La isla siniestra - Shutter Island (Leo es el mejor)</li>
+            <li>Memento es otra genial pero se pelea con Interestellar</li>
+        </ol>
+    </section>
+
+    <section class="hobbies">
+        <h4>Mis hobbies</h4>
+        <ul>
+            <li>Cantar (sobre todo rapcitos).</li>
+            <li>Ver películas.</li>
+            <li>Me gusta aprender, en serio.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h4>Mantras</h4>
+        <span>(frases que voy recopilando que me fascinan y uso para mi vida diaria)</span>
+
+        <div class="quotations">
+            <q>Solvitur ambulando <a href="">(explicación aquí)</a></q>
+            <q>Silencio Bruno</q>
+            <q>Fortis Fortuna Adiuvat <a href="">(explicación aquí)</a></q>
+            <q>Todo en lo que creas, existe</q>
+            <q>No es un día más, es un día menos</q>
+            <q>Don't let the fear destroy you</q>
+            <q>Si solo haces lo que ya sabes hacer, no serás más de lo que ya eres</q>
+        </div>
+    </section>
+</Basic>
+
+<style>
+    section{
+        margin-top: 1.5rem;
+    }
+    ul{
+        padding-inline-start: 40px;
+        list-style-type: disc;
+    }
+    .quotations{
+        display: flex;
+        flex-flow: column wrap;
+        margin-top: .8rem;
+    }
+    q{
+        padding-inline-start: 30px;
+        margin: .5rem 0;
+        position: relative;
+        font-style: italic;
+    }
+    q::before{
+        content: '';
+        position: absolute;
+        left: 0px;
+        width: 3px;
+        height: 100%;
+        background-color: var(--color-gray-800);
+    }
+    q > a{
+        font-style: normal;
+        font-size: 0.7rem;
+    }
+
+</style>

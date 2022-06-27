@@ -1,0 +1,176 @@
+---
+import Basic from '@layouts/Basic.astro'
+import BMAC from '@components/Logos/Bmac.astro'
+import GH from '@components/Logos/Github.astro'
+import IG from '@components/Logos/Instagram.astro'
+import LI from '@components/Logos/Linkedin.astro'
+import TWITCH from '@components/Logos/Twitch.astro'
+import TWITTER from '@components/Logos/Twitter.astro'
+import YT from '@components/Logos/Youtube.astro'
+import PP from '@components/Logos/Paypal.astro'
+import V123 from '@components/Logos/Voice123.astro'
+import FIVE from '@components/Logos/5.astro'
+import AT from '@components/Logos/Correo.astro'
+
+import links from '@components/links'
+---
+
+<Basic title='Contacto' description="En esta sección presento por dónde puedes contactarte conmigo.">
+    <h1>Contacto</h1>
+
+    <p>Tienes muuuuuchas maneras de contactarme y/o conocerme, pero depende de para qué lo requieres. Las rápidas...</p>
+    <div class="links">
+        <span class="btn btn-primary tooltip">
+            <AT /> <a href={links.correo}> <b>Correo</b></a>
+
+            <div class="right">
+                <span>inag.458@gmail.com</span>
+                <i></i>
+            </div>
+        </span>
+        <button class="feedback-btn" data-tf-slider="r86IXIQz" data-tf-width="550" data-tf-position="left"
+            data-tf-iframe-props="title=FeedbackForm" data-tf-medium="snippet"
+            style="all:unset;font-family:Helvetica,Arial,sans-serif;display:inline-block;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background-color:#2B2B2B;color:#FFFFFF;font-size:16px;border-radius:4px;padding:0 26px;font-weight:bold;height:32px;cursor:pointer;line-height:32px;text-align:center;margin:0;text-decoration:none;">Deja
+            un mensaje</button>
+        <script src="//embed.typeform.com/next/embed.js" is:inline></script>
+    </div>
+    <p>Aunque si lo requieres para cosas relacionadas con <b>Ingeniería de Software</b>...
+    <div class="links">
+        <span>
+            <GH /> <a href={links.github}> Github</a>
+        </span>
+        <span>
+            <LI /> <a href={links.linkedin}> LinkedIn</a>
+        </span>
+    </div>
+    <p>Pero, en cambio, si lo quieres para cosas relacionadas con mi <b>voz</b> (publicidad, doblaje, música,
+        podcast)...</p>
+    <div class="links">
+        <span>
+            <V123 /> <a href={links.voice}> Voice 123</a>
+        </span>
+        <span>
+            <YT /> <a href={links.youtube}> Youtube</a>
+        </span>
+        <span>
+            <FIVE /> <a href={links.anchor}> 5MENTARIOS podcast</a>
+        </span>
+    </div>
+    <p>O si no es para eso, sino de manera <b>personal</b>...</p>
+    <div class="links">
+        <span>
+            <IG /> <a href={links.instagram}> Instagram</a>
+        </span>
+        <span>
+            <TWITTER /> <a href={links.twitter}> Twitter</a>
+        </span>
+        <span>
+            <TWITCH /> <a href={links.twitch}> Twitch</a>
+        </span>
+
+    </div>
+    <p>O directamente si es para <b>apoyarme</b>...</p>
+    <div class="links">
+        <span>
+            <BMAC /> <a href={links.bmac}> Buy me a coffe</a>
+        </span>
+        <span>
+            <PP /> <a href={links.paypal}> Paypal</a>
+        </span>
+    </div>
+</Basic>
+
+<style>
+    .links {
+        margin: 2rem 0;
+        display: flex;
+        flex-flow: column wrap;
+        padding-inline-start: 40px;
+        gap: .5rem;
+    }
+
+    .links span {
+        display: flex;
+        align-content: center;
+    }
+
+    .links span a {
+        transform: translateY(-3px);
+
+    }
+    .links span a:hover {
+        color: var(--theme-accent)
+        
+    }
+
+    .feedback-btn {
+        width: 35% !important;
+        transition: background .3s!important;
+    }
+    .feedback-btn:hover{
+        background: var(--theme-accent)!important;
+    }
+
+    .tooltip {
+        display: inline-block;
+        position: relative;
+        text-align: left;
+        width: min-content;
+    }
+
+    .tooltip .right {
+        min-width: auto;
+        top: 50%;
+        left: 100%;
+        margin-left: 20px;
+        transform: translate(-5%, -50%);
+        padding: 7px 20px;
+        color: inherit;
+        background-color: var(--theme-bg);
+        font-weight: 600;
+        font-size: 15px;
+        border-radius: 4px;
+        position: absolute;
+        z-index: 4;
+        
+        border: 1px solid var(--theme-accent);
+        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.8s;
+    }
+
+    .tooltip:hover .right {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .tooltip .right i {
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        margin-top: -12px;
+        width: 12px;
+        height: 24px;
+        overflow: hidden;
+    }
+
+    .tooltip .right i::after {
+        content: '';
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        left: 0;
+        top: 50%;
+        transform: translate(50%, -50%) rotate(-45deg);
+        background-color: var(--theme-bg);
+        border: 1px solid var(--theme-accent);
+        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 760px) {
+        .feedback-btn {
+            width: 55% !important;
+        }
+    }
+</style>
