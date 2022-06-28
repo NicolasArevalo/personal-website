@@ -4,14 +4,17 @@ let allPosts = await Astro.glob('../pages/blog/*.md');
 allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
 let latestPosts = allPosts.slice(0, 3);
 ---
-
-<section class="MiniblogPrev">
+<section>
     <h4>Publicaciones recientes...</h4>
-    <div class="selection">
-        {latestPosts.map( (p) =>
-        <PostCard post={p} />)}
+    <div class="MiniblogPrev">
+    
+        <div class="selection">
+            {latestPosts.map( (p) =>
+            <PostCard post={p} />)}
+        </div>
     </div>
 </section>
+
 
 <style>
     .MiniblogPrev {

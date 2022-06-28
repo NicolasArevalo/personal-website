@@ -1,8 +1,79 @@
 ---
 import Basic from '@layouts/Basic.astro'
+import links from '@components/links'
 ---
 
-<Basic title='Voz' description="En esta sección presento las cosas que hago con mi voz: publicidad, canciones y eso." >
-    <h1>Voice my bro</h1>
-    <p>cantosss xdxd</p>
+<Basic title='Voz' description="En esta sección presento las cosas que hago con mi voz: publicidad, canciones y eso.">
+    <h1>Voz</h1>
+    <p>Aquí encontrarás tooodo lo que hago relacionado con la voz, porque me gusta <b>cantar</b>, como ya dije, y normalmente lo subo a <a href={links.youtube}>Youtube</a>: </p>
+    <div class="contenedor">
+        <iframe class="muestra" src="https://www.youtube.com/embed/ufnH9CAGcQs" title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    <iframe class="muestra" src="https://www.youtube.com/embed/5dIdrIlfkYk" title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+    <p>La parte <b>publicitaria</b> creo que me sale bien a pesar de no saber mucho, ese va en <a href={links.voice}>Voice 123</a>...</p>
+    <iframe class="voice123 muestra" src="https://voice123.com/embed/embed.html?id=ZAHSAAXI"></iframe>
+    <iframe class="voice123 muestra" src="https://voice123.com/embed/embed.html?id=ZAPPOOAA"></iframe>
+    <p>Tengo un podcast donde leo libros...</p>
+    <a href="/podcast">Ver página</a>
+    <p>Me gusta hacer <b>doblaje</b> también...</p>
+    <div class="contenedor">
+        <iframe class="muestra" src="https://www.youtube.com/embed/SMMAwjtw_lU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe class="muestra" src="https://www.youtube.com/embed/NfGxiv_oV84" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
 </Basic>
+
+<style>
+    :root {
+        --ancho-muestras: 450px;
+    }
+    .contenedor{
+        display: flex;
+    }
+    .vermas{
+        width: 100%;
+        text-align: center;
+        padding-inline-start: 40px;
+    }
+    p{
+        margin-top: 1rem;
+    }
+    .muestra {
+        margin: 1rem 0;
+        padding-inline-start: 40px;
+        width: var(--ancho-muestras);
+        /* height: auto; */
+        aspect-ratio: 16/9;
+    }
+
+    .voice123 {
+        border: none;
+        height: 90px;
+        overflow: hidden;
+    }
+
+    @media (max-width: 760px) {
+        :root {
+            --ancho-muestras: 300px;
+        }
+        .contenedor{
+            flex-flow: column wrap;
+        }
+        .contenedor a{
+            width: 100%;
+        }
+        .muestra{
+            padding-inline-start: 0px;
+        }
+        .voice123 {
+        border: none;
+        width: 100%;
+
+        overflow: hidden;
+        transform: scale(1);
+    }
+    }
+</style>
