@@ -343,15 +343,19 @@ blockquote .source {
 }
 .hl:hover::after{
 	height: 70%;
-	
-	/* animation: hlMove .5s linear; */
 }
 
-/* @keyframes hlMove {
-	0%{
-		transform: translateX(-50%);
-	}
-	100%{
-		transform: translateX(0);
-	}
-} */
+.slider__img {
+	scroll-snap-align: start;
+	border-radius: var(--br);
+	height: 280px;
+	object-fit: contain;
+
+}
+
+.sliding {
+	animation-name: slide;
+	animation-duration: 20s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}

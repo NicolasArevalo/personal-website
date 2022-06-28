@@ -19,6 +19,7 @@ const links = {
     diseno: 'https://nicolasarevalo.notion.site/Mockups-2018cceb5bf342868edc5e8377d77a1a',
     twitch: 'https://twitch.com/Nicolas_ArGoz',
     bmac: 'https://www.buymeacoffee.com/lunago28',
-    paypal: 'https://paypal.me/lunag0'
+    paypal: 'https://paypal.me/lunag0',
+    feedback: 'https://ee16cq4xsv8.typeform.com/to/r86IXIQz'
 }
 export default links;

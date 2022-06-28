@@ -1,15 +1,41 @@
 ---
 import Basic from '@layouts/Basic.astro'
 import links from '@components/links'
+import Slider from '@components/Slider.astro';
+
+/* Slider imgs */
+import img1 from '@assets/slider-yo/1.jpeg'
+import img2 from '@assets/slider-yo/2.jpeg'
+import img3 from '@assets/slider-yo/3.jpeg'
+import img4 from '@assets/slider-yo/4.jpeg'
+import img5 from '@assets/slider-yo/5.jpeg'
+import img6 from '@assets/slider-yo/6.jpeg'
+import img7 from '@assets/slider-yo/7.jpeg'
+import img8 from '@assets/slider-yo/8.jpeg'
+import img9 from '@assets/slider-yo/9.jpeg'
+import img10 from '@assets/slider-yo/10.jpeg'
 ---
 
 <Basic title='Sobre mí' description="En esta sección me presento, quién soy y qué hago, incluso porqué lo hago xd">
     <h1>Sobre mí</h1>
-    <p>Hola, soy Nicolás. Soy un apasionado de la tecnología y de la vida que 
+    <Slider>
+        <img class="slider__img sliding" src={img2} alt="Nicolás Arévalo">
+        <img class="slider__img sliding" src={img1} alt="Nicolás Arévalo">
+        <img class="slider__img sliding" src={img3} alt="Nicolás Arévalo">
+        <img class="slider__img sliding" src={img4} alt="Nicolás Arévalo">
+        <img class="slider__img sliding" src={img5} alt="Nicolás Arévalo">
+        <img class="slider__img sliding" src={img6} alt="Nicolás Arévalo">
+        <img class="slider__img sliding" src={img7} alt="Nicolás Arévalo">
+        <img class="slider__img sliding" src={img8} alt="Nicolás Arévalo">
+        <img class="slider__img sliding" src={img9} alt="Nicolás Arévalo">
+        <img class="slider__img sliding" src={img10} alt="Nicolás Arévalo">
+    </Slider>
+    <p>Hola, soy Nicolás. Soy un apasionado de la tecnología y de la vida que
         se creó un blog para compartir todo lo que
         tiene por decir. Actualmente tengo 20 años pero un carácter de 40 xD.
 
-        Si quieres conocer más acerca de mi vida profesional, te recomiendo ir a mi <a href={links.host+"/profesional"}> <i>portafolio</i></a>, donde comparto mis
+        Si quieres conocer más acerca de mi vida profesional, te recomiendo ir a mi <a href={links.host+"/profesional"}>
+            <i>portafolio</i></a>, donde comparto mis
         proyectos.</p>
 
     <section>
@@ -84,25 +110,29 @@ import links from '@components/links'
 </Basic>
 
 <style>
-    section{
+    section {
         margin-top: 1.5rem;
     }
-    ul{
+
+    ul {
         padding-inline-start: 40px;
         list-style-type: disc;
     }
-    .quotations{
+
+    .quotations {
         display: flex;
         flex-flow: column wrap;
         margin-top: .8rem;
     }
-    q{
+
+    q {
         padding-inline-start: 30px;
         margin: .5rem 0;
         position: relative;
         font-style: italic;
     }
-    q::before{
+
+    q::before {
         content: '';
         position: absolute;
         left: 0px;
@@ -110,9 +140,13 @@ import links from '@components/links'
         height: 100%;
         background-color: var(--color-gray-800);
     }
-    q > a{
+
+    q>a {
         font-style: normal;
         font-size: 0.7rem;
     }
 
+    .slider__img {
+        height: 210px !important;
+    }
 </style>

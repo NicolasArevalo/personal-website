@@ -10,6 +10,18 @@ import Slider from '@components/Slider.astro';
 
 import photo from '@pages/recortadayo.png';
 
+/* Slider imgs */
+import img1 from '@assets/slider-home/ventana.jpeg'
+import img2 from '@assets/slider-home/fire.jpeg'
+import img3 from '@assets/slider-home/bird.jpeg'
+import img4 from '@assets/slider-home/blue.jpeg'
+import img5 from '@assets/slider-home/torre.jpeg'
+import img6 from '@assets/slider-home/cartagena.jpeg'
+import img7 from '@assets/slider-home/estrecho.jpeg'
+import img8 from '@assets/slider-home/arcoiris.jpeg'
+import img9 from '@assets/slider-home/neiva.jpeg'
+import img10 from '@assets/slider-home/rivera.jpeg'
+import img11 from '@assets/slider-home/palermo.jpeg'
 
 // Component Script:
 let title = 'Nicolás Arévalo';
@@ -130,44 +142,6 @@ const host = links.host
 			margin-top: 3em;
 
 		}
-
-		.slider__img {
-			scroll-snap-align: start;
-			border-radius: var(--br);
-			width: 210px;
-			object-fit: contain;
-
-		}
-
-		.sliding {
-			animation-name: slide;
-			animation-duration: 20s;
-			animation-iteration-count: infinite;
-			animation-timing-function: linear;
-		}
-
-		@keyframes slide {
-
-			10% {
-				transform: translateX(0);
-			}
-
-			30% {
-				transform: translateX(-100%);
-			}
-
-			50% {
-				transform: translateX(-200%);
-			}
-
-			70% {
-				transform: translateX(-300%);
-			}
-
-			90% {
-				transform: translateX(-400%);
-			}
-		}
 	</style>
 </head>
 
@@ -177,7 +151,7 @@ const host = links.host
 	<div class="wrapper">
 		<main class="content">
 			<section class="intro">
-				<img src="/assets/recortadayo.png" class="yo" alt="">
+				<img src={photo} class="yo" alt="Nicolás Arévalo">
 				<h1 class="latest">{title}</h1>
 				<p>{description} Me gusta: </p>
 			</section>
@@ -195,13 +169,17 @@ const host = links.host
 		<section class="wrapper-fotos" aria-label="">
 			<h4>Fotos que he tomado...</h4>
 			<Slider>
-				<img class="slider__img sliding" src={photo} alt="">
-				<img class="slider__img sliding" src={photo} alt="">
-				<img class="slider__img sliding" src={photo} alt="">
-				<img class="slider__img sliding" src={photo} alt="">
-				<img class="slider__img sliding" src={photo} alt="">
-				<img class="slider__img sliding" src={photo} alt="">
-				<img class="slider__img sliding" src={photo} alt="">
+				<img class="slider__img sliding" src={img5} alt="">
+				<img class="slider__img sliding" src={img7} alt="">
+				<img class="slider__img sliding" src={img3} alt="">
+				<img class="slider__img sliding" src={img8} alt="">
+				<img class="slider__img sliding" src={img4} alt="">
+				<img class="slider__img sliding" src={img11} alt="">
+				<img class="slider__img sliding" src={img6} alt="">
+				<img class="slider__img sliding" src={img2} alt="">
+				<img class="slider__img sliding" src={img1} alt="">
+				<img class="slider__img sliding" src={img9} alt="">
+				<img class="slider__img sliding" src={img10} alt="">
 			</Slider>
 		</section>
 
