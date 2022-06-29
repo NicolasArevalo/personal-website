@@ -1,8 +1,73 @@
 ---
 import Basic from '@layouts/Basic.astro'
+import Slider from '@components/Slider.astro'
+
+import Pdf from '@components/Logos/Pdf.astro'
+import links from '@components/links'
 ---
 
-<Basic title='Portafolio' description="En esta sección presento mis trabajos profesionales" >
-    <h1>Portafolio profesional, bro</h1>
-    <p>xdxdxd xdxd</p>
+<Basic title='Profesional'
+    description="Hola de nuevo! Aquí te mostraré mi camino educativo, las titulaciones, los proyectos y los diseños que quiero resaltar.">
+    <h1>Profesional</h1>
+    <p>
+        Hola de nuevo! Aquí te mostraré mi camino <b>educativo</b>, las <b>titulaciones</b>, los <b>proyectos</b> y los
+        <b>diseños</b> que quiero resaltar.
+    </p>
+    <section>
+        <div class="titulo">
+            <h3>Títulaciones</h3>
+            <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+            <lord-icon src="https://cdn.lordicon.com/xhdhjyqy.json" trigger="hover" colors="primary:#211529"
+                style="width:25px;margin-bottom:1rem">
+            </lord-icon>
+        </div>
+        <div class="links">
+            <span>
+                <a href={links.instagram}>
+                    <Pdf /> Técnico en sistemas (SENA)
+                </a>
+            </span>
+            <span>
+                <a href={links.instagram}>
+                    <Pdf /> SCRUM fundamentals
+                </a>
+            </span>
+            <span>
+                <a href={links.twitter}>
+                    <Pdf /> Universidad del desarrollo web (Udemy)
+                </a>
+            </span>
+            <span>
+                <a href={links.twitch}>
+                    <Pdf /> Profesional de Javascript (Platzi)
+                </a>
+            </span>
+            <span>
+                <a href={links.twitch}>
+                    <Pdf /> Inglés para developers (Platzi)
+                </a>
+            </span>
+
+            <span>Entre otros...</span>
+
+        </div>
+    </section>
+
+    <section>
+        <h3>Proyectos realizados</h3>
+    </section>
+    <section>
+        <h3>Diseños</h3>
+    </section>
+
 </Basic>
+
+<style>
+    .titulo{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        flex-flow: row wrap;
+        gap: 1rem;
+    }
+</style>

@@ -1,5 +1,5 @@
 const links = {
-    host: 'http://localhost:3000',
+    host: '',
     youtube: 'https://www.youtube.com/channel/UCB59FB3tbDi4A4tSunooVoA',
     notion: 'https://nico.ghost.io',
     instagram: 'https://www.instagram.com/_lunago28',

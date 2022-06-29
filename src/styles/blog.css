@@ -18,7 +18,7 @@
 	--color-gray-500: #6b7280;
 	--color-gray-600: #4b5563;
 	--color-gray-700: #2b2b2b;
-	--color-gray-800: #2b1c35;
+	--color-gray-800: #211529;
 	--color-gray-800-rgb: 43, 28, 53;
 	--color-gray-900: #1c1127;
 
@@ -91,6 +91,7 @@ body {
 * {
 	box-sizing: border-box;
 	margin: 0;
+	scroll-behavior: smooth;
 }
 
 :root {
@@ -369,3 +370,25 @@ body {
 		animation-iteration-count: infinite;
 		animation-timing-function: linear;
 	}
+
+	.links {
+        margin: 2rem 0;
+        display: flex;
+        flex-flow: column wrap;
+        padding-inline-start: 40px;
+        gap: .5rem;
+    }
+
+    .links span {
+        display: flex;
+        align-content: center;
+    }
+
+    .links span a {
+        transform: translateY(-3px);
+
+    }
+    .links span a:hover {
+        color: var(--theme-accent)
+        
+    }
