@@ -41,6 +41,7 @@
 	--border: 1px solid var(--color-gray-800);
 	--animation: 0.08s linear;
 	--btn-padding: 6px 8px;
+	--pls: 40px;
 }
 
 :root {
@@ -364,13 +365,6 @@ body {
 		object-fit: contain;
 	}
 
-	.sliding {
-		animation-name: slide;
-		animation-duration: 20s;
-		animation-iteration-count: infinite;
-		animation-timing-function: linear;
-	}
-
 	.links {
         margin: 2rem 0;
         display: flex;
@@ -391,4 +385,13 @@ body {
     .links span a:hover {
         color: var(--theme-accent)
         
+    }
+
+	@keyframes appear{
+        0%{
+            opacity: 0%;
+        }
+        100%{
+            opacity: 100%;
+        }
     }

@@ -1,10 +1,44 @@
 ---
 import Basic from '@layouts/Basic.astro'
 import Slider from '@components/Slider.astro'
+import Arrow from '@components/ArrowDown.astro'
 
 import Pdf from '@components/Logos/Pdf.astro'
 import links from '@components/links'
+
+/* Pdfs */
+import Tecnico from '@components/pdfs/sistemas.pdf'
+import Scrum from '@components/pdfs/scrum.pdf'
+import Udw from '@components/pdfs/udw.pdf'
+import Id from '@components/pdfs/id.pdf'
+import Pjs from '@components/pdfs/pjs.pdf'
+
 ---
+
+<script is:inline>
+
+    function ptm(el) {
+        const contenidoRAW = document.querySelectorAll('.contenido')
+        const contenido = [...contenidoRAW]
+
+        if(el === 1){
+            contenido[0].classList.toggle('show')
+            contenido[1].classList.remove('show')
+            contenido[2].classList.remove('show')
+        }
+        if(el === 2){
+            contenido[0].classList.remove('show')
+            contenido[1].classList.toggle('show')
+            contenido[2].classList.remove('show')
+        } 
+        if(el === 3){
+            contenido[0].classList.remove('show')
+            contenido[1].classList.remove('show')
+            contenido[2].classList.toggle('show')
+        }  
+            
+    }
+</script>
 
 <Basic title='Profesional'
     description="Hola de nuevo! Aquí te mostraré mi camino educativo, las titulaciones, los proyectos y los diseños que quiero resaltar.">
@@ -14,36 +48,86 @@ import links from '@components/links'
         <b>diseños</b> que quiero resaltar.
     </p>
     <section>
-        <div class="titulo">
-            <h3>Títulaciones</h3>
-            <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
-            <lord-icon src="https://cdn.lordicon.com/xhdhjyqy.json" trigger="hover" colors="primary:#211529"
-                style="width:25px;margin-bottom:1rem">
-            </lord-icon>
+        <div class="titulo" onclick="ptm(1)">
+            <h2>Proyectos realizados</h2>
+            <Arrow />
         </div>
-        <div class="links">
+        <div class="contenido uno">
+            <ol>
+                <li>
+                    <a href="https://explounas.com"><h3>Explouñas</h3></a>
+                    <p>piturrriiiii</p>
+                </li>
+            </ol>
+
+        </div>
+    </section>
+
+    <section>
+        <div class="titulo" onclick="ptm(2)">
+            <h2>Títulaciones</h2>
+            <Arrow />
+        </div>
+        <div class="contenido dos">
             <span>
-                <a href={links.instagram}>
+                <a href={Tecnico}>
                     <Pdf /> Técnico en sistemas (SENA)
                 </a>
             </span>
             <span>
-                <a href={links.instagram}>
+                <a href={Scrum}>
                     <Pdf /> SCRUM fundamentals
                 </a>
             </span>
             <span>
-                <a href={links.twitter}>
+                <a href={Udw}>
                     <Pdf /> Universidad del desarrollo web (Udemy)
                 </a>
             </span>
             <span>
-                <a href={links.twitch}>
+                <a href={Pjs}>
                     <Pdf /> Profesional de Javascript (Platzi)
                 </a>
             </span>
             <span>
-                <a href={links.twitch}>
+                <a href={Id}>
+                    <Pdf /> Inglés para developers (Platzi)
+                </a>
+            </span>
+
+            <span>Entre otros...</span>
+
+
+        </div>
+    </section>
+    <section>
+        <div class="titulo" onclick="ptm(3)">
+            <h2>Diseños</h2>
+            <Arrow />
+        </div>
+        <div class="contenido tres">
+            <span>
+                <a href={Tecnico}>
+                    <Pdf /> Técnico en sistemas (SENA)
+                </a>
+            </span>
+            <span>
+                <a href={Scrum}>
+                    <Pdf /> SCRUM fundamentals
+                </a>
+            </span>
+            <span>
+                <a href={Udw}>
+                    <Pdf /> Universidad del desarrollo web (Udemy)
+                </a>
+            </span>
+            <span>
+                <a href={Pjs}>
+                    <Pdf /> Profesional de Javascript (Platzi)
+                </a>
+            </span>
+            <span>
+                <a href={Id}>
                     <Pdf /> Inglés para developers (Platzi)
                 </a>
             </span>
@@ -53,21 +137,54 @@ import links from '@components/links'
         </div>
     </section>
 
-    <section>
-        <h3>Proyectos realizados</h3>
-    </section>
-    <section>
-        <h3>Diseños</h3>
-    </section>
-
 </Basic>
 
 <style>
-    .titulo{
+    section {
+        margin: .8rem 0;
+    }
+    section:first-of-type {
+        margin: 2rem 0 0 0;
+    }
+    .titulo {
         display: flex;
         justify-content: left;
         align-items: center;
         flex-flow: row wrap;
         gap: 1rem;
+        cursor: pointer;
+    }
+
+    .titulo h2{
+        font-weight: 600;
+    }
+
+    .show {
+        display: flex !important;
+        opacity: 0;
+        animation: appear .2s linear .2s forwards;
+    }
+
+    .contenido {
+        margin: .7rem 0;
+        display: none;
+        flex-flow: column wrap;
+        padding-inline-start: var(--pls);
+        gap: .5rem;
+    }
+
+
+    .contenido span {
+        display: flex;
+        align-content: center;
+    }
+
+    .contenido span a {
+        transform: translateY(-3px);
+
+    }
+
+    .contenido span a:hover {
+        color: var(--theme-accent)
     }
 </style>
