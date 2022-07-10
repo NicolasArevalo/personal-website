@@ -3,7 +3,7 @@ setup: |
   import Layout from '../../layouts/BlogPost.astro'
   import Cool from '../../components/Author.astro'
 title: ¿Qué es la belleza? 🪞
-publishDate: Oct 2017
+publishDate: 31 Oct 2017
 name: Nicolás Arévalo
 value: 128
 description: Gracias a los medios de comunicación, y a la sociedad en general, tenemos una definición de belleza vana, creemos que es solo algo físico, y nadie se da a la tarea de saber un poco más. Para nosotros, la belleza es...

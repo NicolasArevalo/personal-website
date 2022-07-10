@@ -3,7 +3,7 @@ setup: |
   import Layout from '../../layouts/BlogPost.astro'
   import Cool from '../../components/Author.astro'
 title: Conciencia 🧠
-publishDate: 12 Dic 2021
+publishDate: 12 Dec 2021
 
 description: Señores, estamos ante el avance tecnológico más grande de la historia. Darwin, Einstein, Musk, todos fueron un pilar fundamental del desarrollo, pero hay algo que nadie nunca pudo vencer, hasta ahora...
 ---
