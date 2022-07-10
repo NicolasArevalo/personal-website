@@ -27,16 +27,16 @@ import links from '@components/links'
     <div class="contenedor podcast">
         <small for="iframe">Capitulo con +500 reproducciones</small>
         <iframe
-        src="https://anchor.fm/nicols-arvalo/embed/episodes/El-coronel-no-tiene-quien-le-escriba-PARTE-I---Gabriel-Garca-Mrquez-e16gk4t"
-        class="muestra" frameborder="0" scrolling="no" id="iframe"></iframe>
+            src="https://anchor.fm/nicols-arvalo/embed/episodes/El-coronel-no-tiene-quien-le-escriba-PARTE-I---Gabriel-Garca-Mrquez-e16gk4t"
+            class="muestra" frameborder="0" scrolling="no" id="iframe"></iframe>
     </div>
-    
+
 
 
     <p>Me gusta hacer <b>doblaje</b> también...</p>
     <div class="contenedor">
-        <iframe class="muestra yt" src="https://www.youtube.com/embed/SMMAwjtw_lU" title="YouTube video player"
-            frameborder="0"
+        <iframe class="muestra yt" src="https://www.youtube.com/embed/SMMAwjtw_lU?start=30"
+            title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
         <iframe class="muestra yt" src="https://www.youtube.com/embed/NfGxiv_oV84" title="YouTube video player"
@@ -64,25 +64,30 @@ import links from '@components/links'
     p {
         margin-top: 1rem;
     }
-    .podcast{
+
+    .podcast {
         flex-flow: column wrap;
-        
+
     }
-    .podcast small{
+
+    .podcast small {
         color: var(--color-gray-400)
     }
+
     .muestra {
         margin: 1rem 0;
         padding-inline-start: 40px;
         width: var(--ancho-muestras);
     }
-    .yt{
+
+    .yt {
         aspect-ratio: 16/9;
     }
+
     .voice123 {
         border: none;
         height: 90px;
-        overflow: hidden;   
+        overflow: hidden;
     }
 
     @media (max-width: 760px) {

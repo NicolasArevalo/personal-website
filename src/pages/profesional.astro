@@ -4,7 +4,7 @@ import Slider from '@components/Slider.astro'
 import Arrow from '@components/ArrowDown.astro'
 
 import Pdf from '@components/Logos/Pdf.astro'
-import links from '@components/links'
+import links from '@components/links.js'
 
 /* Pdfs */
 import Tecnico from '@components/pdfs/sistemas.pdf'
@@ -12,6 +12,20 @@ import Scrum from '@components/pdfs/scrum.pdf'
 import Udw from '@components/pdfs/udw.pdf'
 import Id from '@components/pdfs/id.pdf'
 import Pjs from '@components/pdfs/pjs.pdf'
+
+/* IMGS */
+
+import img1 from '@assets/slider-home/ventana.webp'
+import img2 from '@assets/slider-home/fire.webp'
+import img3 from '@assets/slider-home/bird.webp'
+
+/* Logos */
+
+import Html from "@components/Logos/Html.astro";
+import Css from "@components/Logos/Css.astro";
+import Js from "@components/Logos/Js.astro";
+import React from "@components/Logos/React.astro";
+import AstroLogo from "@components/Logos/Astro.astro";
 
 ---
 
@@ -21,22 +35,31 @@ import Pjs from '@components/pdfs/pjs.pdf'
         const contenidoRAW = document.querySelectorAll('.contenido')
         const contenido = [...contenidoRAW]
 
-        if(el === 1){
+        if (el === 1) {
             contenido[0].classList.toggle('show')
             contenido[1].classList.remove('show')
             contenido[2].classList.remove('show')
+            contenido[3].classList.remove('show')
         }
-        if(el === 2){
+        if (el === 2) {
             contenido[0].classList.remove('show')
             contenido[1].classList.toggle('show')
             contenido[2].classList.remove('show')
-        } 
-        if(el === 3){
+            contenido[3].classList.remove('show')
+        }
+        if (el === 3) {
             contenido[0].classList.remove('show')
             contenido[1].classList.remove('show')
             contenido[2].classList.toggle('show')
-        }  
-            
+            contenido[3].classList.remove('show')
+        }
+        if (el === 4) {
+            contenido[0].classList.remove('show')
+            contenido[1].classList.remove('show')
+            contenido[2].classList.remove('show')
+            contenido[3].classList.toggle('show')
+        }
+
     }
 </script>
 
@@ -53,12 +76,103 @@ import Pjs from '@components/pdfs/pjs.pdf'
             <Arrow />
         </div>
         <div class="contenido uno">
-            <ol>
-                <li>
-                    <a href="https://explounas.com"><h3>Explouñas</h3></a>
-                    <p>piturrriiiii</p>
-                </li>
-            </ol>
+            <article>
+                <a href="https://explounas.com">
+                    <h3>Explouñas 💅🏼
+                        <Html />
+                        <Css />
+                        <Js />
+                    </h3>
+                </a>
+                <p>Este es un sitio web informativo hecho a medida para un emprendimiento.
+                    Fue hecho con tecnologías básicas de la web, sin embargo, que eso no los engañe, es muy bonita.
+                </p>
+                <div class="media">
+                    <div class="tecnologias">
+                        <a class="boton" href="https://explounas.com">Ver sitio (despliegue)</a>
+                        <a class="boton" href="https://github.com/nicolasarevalo/explounas">Ver código</a>
+                    </div>
+                </div>
+
+            </article>
+            <article>
+                <a href="https://perrritos.vercel.app">
+                    <h3>Perritos 🐶
+                        <React />
+                        <Css />
+                    </h3>
+                </a>
+                <p>Aplicación muy interesante donde aprendí que a las APIs también les puedo mandar info (Post, put,
+                    patch, delete). La hice en vanilla con una plantilla de snowpack y tailwind pero tuve problemas para
+                    subirlo a vercel, así que decidí pasarlo a React.
+                </p>
+                <div class="media">
+                    <div class="tecnologias">
+                        <a class="boton" href="https://perrritos.vercel.app">Ver sitio (despliegue)</a>
+                        <a class="boton" href="https://github.com/nicolasarevalo/perritos">Ver código</a>
+                    </div>
+                </div>
+
+            </article>
+            <article>
+                <a href="https://nicolasarevalo.github.io/giphy-app/">
+                    <h3>Giphy app 😜
+                        <React />
+                        <Css />
+                    </h3>
+                </a>
+                <p>Este proyecto lo creé con el mejor curso que he heecho hasta la fecha. Un año después de haberlo
+                    terminado
+                    decidí agregarle estilos bonitos. Los hice con CSS puro.
+                </p>
+                <div class="media">
+
+                    <iframe src="https://nicolasarevalo.github.io/giphy-app/" frameborder="0"></iframe>
+
+                    <div class="tecnologias">
+                        <a class="boton" href="https://nicolasarevalo.github.io/giphy-app/">Ver sitio (despliegue)</a>
+                        <a class="boton" href="https://github.com/nicolasarevalo/giphy-app">Ver código</a>
+                    </div>
+                </div>
+
+            </article>
+            <article>
+                <a href="https://lunago.vercel.app/">
+                    <h3>Evolución de mi sitio web 😜</h3>
+                </a>
+                <p>Este proyecto me fascina, porque siempre lo hago con pasión. Mi web pasada fue una web que quise que
+                    fuera diferente,
+                    algo especial. Lo logré, pero no funcionaba tan bien como yo quería. Al final terminé en un
+                    boilerplate que no me gusta
+                    y no me hacía sentir cómodo. Así que creé uno más simple, pero bien hecho. Y aquí estamos. La
+                    primera web si fue más o menos
+                    como pude jajaja.
+                </p>
+                <h4>Mi web v.1
+                    <Html />
+                    <Css />
+                </h4>
+                <div class="media">
+                    <div class="tecnologias centrado">
+                        <a class="boton" href="https://nicolas-arevalo.netlify.app">Ver sitio (despliegue)</a>
+                        <a class="boton" href="https://github.com/NicolasArevalo/naweb">Ver código</a>
+                    </div>
+                </div>
+                <h4>Mi web v.2
+                    <React />
+                    <Css />
+                </h4>
+                <div class="media">
+                    <div class="tecnologias centrado">
+                        <a class="boton" href="https://lunago.vercel.app/">Ver sitio (despliegue)</a>
+                        <a class="boton" href="https://github.com/nicolasarevalo/lunago">Ver código</a>
+                    </div>
+                </div>
+                <span id="v3">¡Estamos en la versión 3!
+                    <AstroLogo />
+                </span>
+            </article>
+
 
         </div>
     </section>
@@ -136,6 +250,22 @@ import Pjs from '@components/pdfs/pjs.pdf'
 
         </div>
     </section>
+    <section>
+        <div class="titulo" onclick="ptm(4)">
+            <h2>Idiomas</h2>
+            <Arrow />
+        </div>
+        <div class="contenido cuatro">
+            <ol>
+                <li>Español</li>
+                <li>English</li>
+            </ol>
+
+            <span id="porahora">Por ahora...</span>
+
+
+        </div>
+    </section>
 
 </Basic>
 
@@ -143,9 +273,11 @@ import Pjs from '@components/pdfs/pjs.pdf'
     section {
         margin: .8rem 0;
     }
+
     section:first-of-type {
         margin: 2rem 0 0 0;
     }
+
     .titulo {
         display: flex;
         justify-content: left;
@@ -155,7 +287,7 @@ import Pjs from '@components/pdfs/pjs.pdf'
         cursor: pointer;
     }
 
-    .titulo h2{
+    .titulo h2 {
         font-weight: 600;
     }
 
@@ -173,6 +305,13 @@ import Pjs from '@components/pdfs/pjs.pdf'
         gap: .5rem;
     }
 
+    .uno {
+        padding-inline-start: calc(var(--pls) - 10px) !important;
+    }
+
+    article:last-child {
+        margin-bottom: 2rem;
+    }
 
     .contenido span {
         display: flex;
@@ -186,5 +325,88 @@ import Pjs from '@components/pdfs/pjs.pdf'
 
     .contenido span a:hover {
         color: var(--theme-accent)
+    }
+
+    li::marker {
+        font-size: xx-large;
+        color: var(--color-gray-400)
+    }
+
+    iframe {
+        aspect-ratio: 16/9;
+        background-color: white;
+        margin-top: 1rem;
+
+    }
+
+    h4 {
+        margin: 1rem 0 0 0;
+        text-align: center;
+    }
+
+    .media {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .media:first-child {
+        width: 200px;
+    }
+
+    .tecnologias {
+        margin: 2rem 0;
+        display: flex;
+        flex-flow: row wrap;
+        gap: .5rem;
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .centrado{
+        justify-content: center!important ;
+    }
+
+    #v3 {
+        width: 100%;
+        justify-content: center;
+    }
+
+    #porahora {
+        color: var(--color-gray-400);
+        margin-top: 1rem;
+    }
+
+    svg {
+        width: 45px !important;
+        height: 45px !important;
+    }
+
+    @media(max-width: 760px) {
+        .titulo h2 {
+            font-size: x-large;
+        }
+
+        .uno {
+            padding-inline-start: 10px !important;
+        }
+
+        .tecnologias {
+            margin: 2rem 0;
+            display: flex;
+            flex-flow: column wrap;
+            padding: 0 10px;
+            gap: .5rem;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .media {
+            margin: 0;
+        }
+
+        iframe {
+            display: none;
+        }
     }
 </style>

@@ -42,6 +42,7 @@
 	--animation: 0.08s linear;
 	--btn-padding: 6px 8px;
 	--pls: 40px;
+	--transition-time: .2s;
 }
 
 :root {
@@ -386,6 +387,23 @@ body {
         color: var(--theme-accent)
         
     }
+
+
+	.boton {
+        cursor: pointer;
+        border: none;
+        padding: .3rem 1rem;
+        background-color: var(--theme-text);
+        text-align: center;
+        border-radius: var(--br);
+        color: white!important;
+        font-weight: 600;
+        transition: background var(--transition-time) !important;
+    }
+    .boton:hover{
+        background: var(--theme-accent)!important;
+    }
+
 
 	@keyframes appear{
         0%{
