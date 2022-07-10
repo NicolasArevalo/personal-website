@@ -3,7 +3,7 @@ setup: |
   import Layout from '../../layouts/BlogPost.astro'
   import Cool from '../../components/Author.astro'
 title: Graduación 🎓
-publishDate: 28 Abr 2022
+publishDate: 28 Apr 2022
 name: Nicolás Arévalo
 value: 128
 description: Cata y yo tenemos una relación muy profunda. Una conexión real. Mañana ella se va a graduar como profesional, y por supuesto yo estaré ahí, acompañándola en este hito en su vida. Pensando en esto decidí...
