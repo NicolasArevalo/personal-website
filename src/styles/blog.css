@@ -15,8 +15,8 @@
 	--color-gray-200: #e5e7eb;
 	--color-gray-300: #d1d5db;
 	--color-gray-400: #9ca3af;
-	--color-gray-500: #6b7280;
-	--color-gray-600: #4b5563;
+	--color-gray-500: #747982;
+	--color-gray-600: #55585d;
 	--color-gray-700: #2b2b2b;
 	--color-gray-800: #211529;
 	--color-gray-800-rgb: 43, 28, 53;
@@ -75,8 +75,8 @@ body {
 	--theme-accent-opacity: 0.3;
 	--theme-divider: var(--color-gray-900);
 	--theme-text: var(--color-gray-200);
-	--theme-text-light: var(--color-gray-400);
-	--theme-text-lighter: var(--color-gray-600);
+	--theme-text-light: var(--color-red);
+	--theme-text-lighter: var(--color-red);
 	--theme-bg: var(--color-black);
 	--theme-bg-offset: var(--color-gray-900);
 	--theme-code-inline-bg: var(--color-gray-800);
@@ -332,6 +332,11 @@ body {
 		fill: var(--color-gray-700);
 	}
 
+	.logo-profesional{
+		transform: translateY(3px);
+		fill: var(--color-gray-200);
+	}
+
 	.navicon {
 		width: 1.1em;
 		cursor: pointer;
@@ -393,10 +398,10 @@ body {
         cursor: pointer;
         border: none;
         padding: .3rem 1rem;
-        background-color: var(--theme-text);
+        background-color: var(--color-gray-900);
         text-align: center;
         border-radius: var(--br);
-        color: white!important;
+        color: var(--color-gray-100)!important;
         font-weight: 600;
         transition: background var(--transition-time) !important;
     }
