@@ -11,8 +11,7 @@ export interface Props {
 }
 
 const { title, author, publishDate, heroImage, alt } = Astro.props;
-
-let location = new URL(Astro.request.url);
+const location = new URL(Astro.request.url, Astro.site)
 ---
 
 <div class="layout">
