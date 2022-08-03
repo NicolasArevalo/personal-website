@@ -1,4 +1,4 @@
-<section class="slider">
+<section class="slider" client:visible >
     <slot />
 </section>
 
@@ -11,6 +11,14 @@
         scroll-snap-type: x mandatory;
         padding-bottom: 1rem;
         margin-bottom: 1rem;
+    }
+    section::-webkit-scrollbar {
+        height: 10px;
+    }
+
+    section::-webkit-scrollbar-thumb {
+        background: rgba(var(--color-purple-rgb), .5);
+        border-radius: 6px;
     }
 
 </style>
