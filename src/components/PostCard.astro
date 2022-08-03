@@ -14,13 +14,27 @@ const { post } = Astro.props;
         </a>
     </header>
     <p>{post.frontmatter.description}</p>
-    <a href={post.url}>Leer más</a>
+    <a class="boton" href={post.url}>
+        <svg class="logo" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <title>Leer más</title>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+          </svg>
+        Leer más</a>
 </article>
 
 <style>
     .post-card {
-        width: 210px;
-        height: 300px;
+        width: 240px;
+        min-height: 230px;
+        max-width: 230px;
+        height: max-content;
+        background: var(--color-white);
+        padding: .6rem;
+        margin-bottom: .8rem;
+        display: flex;
+        flex-direction: column;
+        box-shadow: var(--shadow);
+        border-radius: var(--br);
     }
 
     header p {
@@ -29,6 +43,7 @@ const { post } = Astro.props;
 
     header .title {
         font-size: 1.6em;
+        margin-bottom: .8rem;
     }
 
     p {
@@ -36,13 +51,18 @@ const { post } = Astro.props;
     }
 
     .post-card>a {
+        margin-top: 1rem;
         font-size: .8em;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     @media (max-width: 760px) {
         .post-card {
-            width: 165px;
-            height: 250px;
+            width: 215px;
+            height: auto;
         }
     }
 </style>
