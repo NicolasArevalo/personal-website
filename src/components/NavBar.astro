@@ -5,12 +5,37 @@ import Five from "@components/Logos/5.astro";
 const host = ''
 ---
 
+<script is:inline>
+	const fadeOut = () => {
+		const loaderWrapper = document.querySelector('.load_wrapper')
+		loaderWrapper.classList.add('fade')
+	}
+	window.addEventListener('load', fadeOut)
+
+</script>
+
+<div class="load_wrapper">
+	<div class="load_loader">
+		<svg id="load_logo" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280">
+			<title>Nicolás Arévalo Logo</title>
+			<polygon points="92 277 117.5 78.5 163 141.5 186.5 3.5 182 216.5 132 153 92 277" />
+		</svg>
+		<div class="lds-ellipsis">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+
+	</div>
+</div>
+
 <header class="wrapper">
 	<article>
 		<h1>
 			<a href="/">
 				<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280">
-					<title>NAicon</title>
+					<title>Nicolás Arévalo Logo</title>
 					<polygon points="92 277 117.5 78.5 163 141.5 186.5 3.5 182 216.5 132 153 92 277" />
 				</svg>
 			</a>
@@ -45,6 +70,128 @@ const host = ''
 </header>
 
 <style>
+	/* LOADER */
+
+	.load_wrapper {
+		position: fixed;
+		inset: 0;
+		z-index: 99;
+		background-color: var(--color-white);
+		display: grid;
+		place-items: center;
+		transition: opacity .25s, visibility 1s;
+	}
+
+	.fade {
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	.load_loader {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#load_logo {
+		width: 5rem;
+		height: 5rem;
+	}
+
+	.lds-ellipsis {
+		display: inline-block;
+		position: relative;
+		width: 70px;
+		height: 40px;
+	}
+
+	.lds-ellipsis div {
+		position: absolute;
+		top: 10px;
+		width: 9px;
+		height: 9px;
+		border-radius: 50%;
+		background: rgba(var(--color-gray-800-rgb), .95);
+		animation-timing-function: cubic-bezier(0, 1, 1, 0);
+	}
+
+	.lds-ellipsis div:nth-child(1) {
+		left: 8px;
+		animation: lds-ellipsis1 0.6s infinite;
+	}
+
+	.lds-ellipsis div:nth-child(2) {
+		left: 8px;
+		animation: lds-ellipsis2 0.6s infinite;
+	}
+
+	.lds-ellipsis div:nth-child(3) {
+		left: 32px;
+		animation: lds-ellipsis2 0.6s infinite;
+	}
+
+	.lds-ellipsis div:nth-child(4) {
+		left: 56px;
+		animation: lds-ellipsis3 0.6s infinite;
+	}
+
+	@keyframes lds-ellipsis1 {
+		0% {
+			transform: scale(0);
+		}
+
+		100% {
+			transform: scale(1);
+		}
+	}
+
+	@keyframes lds-ellipsis3 {
+		0% {
+			transform: scale(1);
+		}
+
+		100% {
+			transform: scale(0);
+		}
+	}
+
+	@keyframes lds-ellipsis2 {
+		0% {
+			transform: translate(0, 0);
+		}
+
+		100% {
+			transform: translate(24px, 0);
+		}
+	}
+
+	@-webkit-keyframes vibrate {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }}
+
+	/* HEADER */
 	header {
 		padding-top: 1rem;
 		padding-bottom: 1rem;
@@ -91,6 +238,7 @@ const host = ''
 	#menu__toggle {
 		opacity: 0;
 	}
+
 	#menu__toggle:checked+.menu__btn>span {
 		transform: rotate(45deg);
 	}
@@ -150,7 +298,7 @@ const host = ''
 	.menu__box {
 		display: block;
 		position: fixed;
-		top: -100%;
+		top: -110%;
 		right: 0;
 		left: 0;
 		margin: auto;
@@ -162,9 +310,10 @@ const host = ''
 		border-radius: 0 0 0 var(--br);
 		transition-duration: .25s;
 		z-index: 5;
-/* 		background-color: #fcfcfc;
+		/* 		background-color: #fcfcfc;
 		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%235b0fac' fill-opacity='0.04' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
-	 */}
+	 */
+	}
 
 	.menu__box::before {
 		content: '';
