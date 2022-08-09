@@ -98,9 +98,9 @@ import img10 from '@assets/slider-yo/10.jpeg'
         <span>(frases que voy recopilando que me fascinan y uso para mi vida diaria)</span>
 
         <div class="quotations">
-            <q>Solvitur ambulando <a href="">(explicación aquí)</a></q>
+            <q>Solvitur ambulando <!-- <a href="">(explicación aquí)</a> --></q>
             <q>Silencio Bruno</q>
-            <q>Fortis Fortuna Adiuvat <a href="">(explicación aquí)</a></q>
+            <q>Fortis Fortuna Adiuvat <!-- <a href="">(explicación aquí)</a> --></q>
             <q>Todo en lo que creas, existe</q>
             <q>No es un día más, es un día menos</q>
             <q>Don't let the fear destroy you</q>
@@ -112,11 +112,17 @@ import img10 from '@assets/slider-yo/10.jpeg'
 <style>
     section {
         margin-top: 1.5rem;
+        
     }
+
 
     ul {
         padding-inline-start: 40px;
         list-style-type: disc;
+    }
+
+    li{
+        color: var(--theme-text-light);
     }
 
     .quotations {
