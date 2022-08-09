@@ -59,17 +59,21 @@ function closeBanner() {
         font-size: 0.833rem;
         text-decoration: underline;
     }
-    .banner .xclose {
+    .xclose {
         position: absolute;
-        right: 2em;
+        right: 0;
         top: 0;
+        cursor: pointer;    
+    }
 
-    }
-    .xclose{
-        cursor: pointer;
-    }
     svg{
         color: var(--color-white);
         margin-top: 7px;
+    }
+
+    @media (min-width: 860px){
+        .xclose{
+            right: 2rem;
+        }
     }
 </style>
