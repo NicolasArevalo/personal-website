@@ -347,6 +347,7 @@ body {
 		transform: translateY(5px);
 		fill: var(--color-gray-200);
 		margin-right: 5px;
+		padding: 0 !important;
 	}
 
 	.navicon {
@@ -409,7 +410,7 @@ body {
 	.boton {
         cursor: pointer;
         border: none;
-        padding: 0.3rem 1rem 0.5rem 1rem;
+        padding: 0.3rem 1rem 0.5rem ;
         background-color: var(--color-gray-900);
         text-align: center;
         border-radius: var(--br);
