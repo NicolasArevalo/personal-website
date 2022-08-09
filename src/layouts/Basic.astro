@@ -27,41 +27,18 @@ const { title, description } = Astro.props;
 				justify-content: center;
 			}
 
-			.content {
-				margin-top: 4rem;
-				margin-bottom: 8rem;
-			}
-
-			.content :global(main > * + *) {
+			main{
 				margin-top: 1rem;
 			}
 
-			.intro {
-				padding-bottom: 4rem;
-				margin-bottom: 2rem;
-				border-bottom: 4px solid var(--theme-divider);
-			}
-
-			.intro > * {
-				margin: 0;
-			}
-
-			.latest {
-				font-size: 2.5rem;
-				font-weight: 800;
-			}
-
-			p{
-				background-color: red;
-			}
 		</style>
 	</head>
 
 	<body>
 		<NavBar />
-		<div class="wrapper">
+		<main class="wrapper">
             <slot />
-        </div>
+        </main>
 		<Footer />
 	</body>
 </html>
