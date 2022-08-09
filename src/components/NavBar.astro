@@ -58,6 +58,7 @@ const host = ''
 				<li><a class="menu__item" href={host+'/profesional/'}>Profesional</a></li>
 				<li><a class="menu__item" href={host+'/voz/'}>Voz</a></li>
 				<li><a class="menu__item" href={host+'/contacto/'}>Contacto</a></li>
+
 				<div class="nav__logos fixed">
 					<Twitter />
 					<Github />
@@ -166,30 +167,36 @@ const host = ''
 	}
 
 	@-webkit-keyframes vibrate {
-  0% {
-    -webkit-transform: translate(0);
-            transform: translate(0);
-  }
-  20% {
-    -webkit-transform: translate(-2px, 2px);
-            transform: translate(-2px, 2px);
-  }
-  40% {
-    -webkit-transform: translate(-2px, -2px);
-            transform: translate(-2px, -2px);
-  }
-  60% {
-    -webkit-transform: translate(2px, 2px);
-            transform: translate(2px, 2px);
-  }
-  80% {
-    -webkit-transform: translate(2px, -2px);
-            transform: translate(2px, -2px);
-  }
-  100% {
-    -webkit-transform: translate(0);
-            transform: translate(0);
-  }}
+		0% {
+			-webkit-transform: translate(0);
+			transform: translate(0);
+		}
+
+		20% {
+			-webkit-transform: translate(-2px, 2px);
+			transform: translate(-2px, 2px);
+		}
+
+		40% {
+			-webkit-transform: translate(-2px, -2px);
+			transform: translate(-2px, -2px);
+		}
+
+		60% {
+			-webkit-transform: translate(2px, 2px);
+			transform: translate(2px, 2px);
+		}
+
+		80% {
+			-webkit-transform: translate(2px, -2px);
+			transform: translate(2px, -2px);
+		}
+
+		100% {
+			-webkit-transform: translate(0);
+			transform: translate(0);
+		}
+	}
 
 	/* HEADER */
 	header {
@@ -205,7 +212,8 @@ const host = ''
 	}
 
 	.nav__logos {
-		padding: .4rem .5rem 0 0;
+		/* padding: 0rem .5rem 0 0; */
+		margin-right: .5rem;
 	}
 
 	.fixed {
@@ -221,9 +229,6 @@ const host = ''
 		flex-grow: 1;
 	}
 
-	.logo {
-		transform: translateY(0.25rem);
-	}
 
 	svg {
 		width: 3rem;
@@ -261,14 +266,13 @@ const host = ''
 	.hamburguer-menu {
 		display: block;
 		width: 30px;
-		/* transform: translateY(-4px); */
 	}
 
 	.menu__btn {
 		display: block;
 		position: relative;
 		width: 100%;
-		height: 30px;
+		height: 25px;
 		cursor: pointer;
 		z-index: 6;
 	}
@@ -281,7 +285,9 @@ const host = ''
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 3px;
+		height: 4px;
+
+		border-radius: 16px;
 		background-color: var(--color-gray-700);
 	}
 
@@ -310,9 +316,6 @@ const host = ''
 		border-radius: 0 0 0 var(--br);
 		transition-duration: .25s;
 		z-index: 5;
-		/* 		background-color: #fcfcfc;
-		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%235b0fac' fill-opacity='0.04' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
-	 */
 	}
 
 	.menu__box::before {
@@ -338,29 +341,67 @@ const host = ''
 		font-weight: bold;
 		transition-duration: .25s;
 		text-align: left;
-		width: 30%;
+		width: 80%;
 		margin: auto;
-		/* border-bottom: var(--border-light); */
 	}
 
 	.menu__item:hover {
-		/* background-color: rgba(var(--theme-accent-rgb), var(--theme-accent-opacity)); */
 		background: rgb(238, 230, 249);
 		background: linear-gradient(90deg, rgba(238, 230, 249, 1) 0%, rgba(238, 230, 249, 1) 5%, rgba(238, 230, 249, .4) 35%, rgba(0, 0, 0, 0) 100%);
 	}
 
-	@media (max-width: 760px) {
+	@media (min-width: 860px) {
+		h1 {
+			flex-grow: 0;
+		}
+
+		.hamburguer-menu {
+			width: auto;
+		}
+
+		#menu__toggle {
+			display: none;
+		}
+
+		.menu__btn {
+			display: none;
+		}
+
+		.menu__box {
+			display: flex;
+			flex-flow: row wrap;
+			position: relative;
+			top: 0;
+			opacity: 1;
+			padding: 0;
+			font-size: small;
+			/* gap: .5rem; */
+
+		}
+
 		.menu__item {
-			width: 80%;
+			padding: 0;
+			margin: 0;
+			width: auto;
+			padding: 3px 12px;
+			border-radius: var(--br);
+		}
+
+		.menu__item:hover {
+			background: var(--hoverchido);
 		}
 
 		.nav__logos {
 			padding: 0 0 0 0;
+			order: 3;
+		}
+
+		.fixed {
+			display: none;
 		}
 
 		.menu__box::before {
-			width: 100%;
-			height: 100%;
+			display: none;
 		}
 	}
 </style>
