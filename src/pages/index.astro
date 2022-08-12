@@ -30,8 +30,9 @@ let description = 'Hola! Soy Nicolás. Soy ingeniero de software enfocado ahora 
 const host = links.host
 
 ---
+
 <script is:inline>
-	console.log('mano no mires la consola, qué quieres hacer? 😐')	
+	console.log('mano no mires la consola, qué quieres hacer? 😐')
 </script>
 <html lang="es">
 
@@ -87,6 +88,28 @@ const host = links.host
 			align-items: center;
 			justify-content: space-between;
 			padding: 1em;
+		}
+
+		.hl {
+			position: relative;
+		}
+
+		.hl::after {
+			content: '';
+			position: absolute;
+			bottom: .2rem;
+			left: 0;
+			right: 0;
+			width: 100%;
+			height: 30%;
+			background-color: rgba(var(--theme-accent-rgb), .2);
+			z-index: -1;
+			transition: height .3s;
+			border-radius: var(--br);
+		}
+
+		.hl:hover::after {
+			height: 70%;
 		}
 
 		@media(max-width: 760px) {
