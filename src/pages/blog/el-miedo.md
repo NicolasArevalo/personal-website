@@ -7,7 +7,7 @@ title: El miedo 😰
 publishDate: 17 Aug 2022
 name: Nicolás Arévalo
 value: 128
-description: Tu corazón se acelera, los dedos de tus manos y de tus pies se ponen fríos, respiras más rápido, tu piel se eriza. El *miedo*. Todos conocen esta palabra. Todos saben que han sentido miedo...
+description: Tu corazón se acelera, los dedos de tus manos y de tus pies se ponen fríos, respiras más rápido, tu piel se eriza. El *miedo*. Todos conocen esta palabra. Todos saben que han sentido miedo. Pero ¿en qué momento te..
 ---
 
 Tu corazón se acelera, los dedos de tus manos y de tus pies se ponen fríos, respiras más rápido, tu piel se eriza.
