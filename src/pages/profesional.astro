@@ -22,386 +22,438 @@ import img3 from '@assets/slider-home/bird.webp'
 
 /* Logos */
 
-import Html from "@components/Logos/Html.astro";
-import Css from "@components/Logos/Css.astro";
-import Js from "@components/Logos/Js.astro";
-import React from "@components/Logos/React.astro";
-import Github from "@components/Logos/GithubMini.astro";
-import Link from "@components/Logos/Link.astro";
-import AstroLogo from "@components/Logos/Astro.astro";
-import Dw from "@components/Logos/Dw.astro";
-import User from "@components/Logos/User.astro";
+import Html from '@components/Logos/Html.astro'
+import Css from '@components/Logos/Css.astro'
+import Tailwind from '@components/Logos/Tailwind.astro'
+import Picocss from '@components/Logos/Picocss.astro'
+import Js from '@components/Logos/Js.astro'
+import React from '@components/Logos/React.astro'
+import Supabase from '@components/Logos/supabase.astro'
+import Github from '@components/Logos/GithubMini.astro'
+import Link from '@components/Logos/Link.astro'
+import AstroLogo from '@components/Logos/Astro.astro'
+import Dw from '@components/Logos/Dw.astro'
+import User from '@components/Logos/User.astro'
 
 //const link = <svg class="loguito" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M172.5 131.1C228.1 75.51 320.5 75.51 376.1 131.1C426.1 181.1 433.5 260.8 392.4 318.3L391.3 319.9C381 334.2 361 337.6 346.7 327.3C332.3 317 328.9 297 339.2 282.7L340.3 281.1C363.2 249 359.6 205.1 331.7 177.2C300.3 145.8 249.2 145.8 217.7 177.2L105.5 289.5C73.99 320.1 73.99 372 105.5 403.5C133.3 431.4 177.3 435 209.3 412.1L210.9 410.1C225.3 400.7 245.3 404 255.5 418.4C265.8 432.8 262.5 452.8 248.1 463.1L246.5 464.2C188.1 505.3 110.2 498.7 60.21 448.8C3.741 392.3 3.741 300.7 60.21 244.3L172.5 131.1zM467.5 380C411 436.5 319.5 436.5 263 380C213 330 206.5 251.2 247.6 193.7L248.7 192.1C258.1 177.8 278.1 174.4 293.3 184.7C307.7 194.1 311.1 214.1 300.8 229.3L299.7 230.9C276.8 262.1 280.4 306.9 308.3 334.8C339.7 366.2 390.8 366.2 422.3 334.8L534.5 222.5C566 191 566 139.1 534.5 108.5C506.7 80.63 462.7 76.99 430.7 99.9L429.1 101C414.7 111.3 394.7 107.1 384.5 93.58C374.2 79.2 377.5 59.21 391.9 48.94L393.5 47.82C451 6.731 529.8 13.25 579.8 63.24C636.3 119.7 636.3 211.3 579.8 267.7L467.5 380z"/></svg>
 ---
 
 <script is:inline>
+	function justOne(el) {
+		const contenidoRAW = document.querySelectorAll('.contenido')
+		const contenido = [...contenidoRAW]
 
-    function justOne(el) {
-        const contenidoRAW = document.querySelectorAll('.contenido')
-        const contenido = [...contenidoRAW]
+		if (el === 1) {
+			contenido[0].classList.toggle('show')
+			contenido[1].classList.remove('show')
+			contenido[2].classList.remove('show')
+			//contenido[3].classList.remove('show')
+		}
+		if (el === 2) {
+			contenido[0].classList.remove('show')
+			contenido[1].classList.toggle('show')
+			contenido[2].classList.remove('show')
+			//contenido[3].classList.remove('show')
+		}
+		if (el === 3) {
+			contenido[0].classList.remove('show')
+			contenido[1].classList.remove('show')
+			contenido[2].classList.toggle('show')
+			//contenido[3].classList.remove('show')
+		}
+		if (el === 4) {
+			contenido[0].classList.remove('show')
+			contenido[1].classList.remove('show')
+			contenido[2].classList.remove('show')
+			//contenido[3].classList.toggle('show')
+		}
+	}
 
-        if (el === 1) {
-            contenido[0].classList.toggle('show')
-            contenido[1].classList.remove('show')
-            contenido[2].classList.remove('show')
-            //contenido[3].classList.remove('show')
-        }
-        if (el === 2) {
-            contenido[0].classList.remove('show')
-            contenido[1].classList.toggle('show')
-            contenido[2].classList.remove('show')
-            //contenido[3].classList.remove('show')
-        }
-        if (el === 3) {
-            contenido[0].classList.remove('show')
-            contenido[1].classList.remove('show')
-            contenido[2].classList.toggle('show')
-            //contenido[3].classList.remove('show')
-        }
-        if (el === 4) {
-            contenido[0].classList.remove('show')
-            contenido[1].classList.remove('show')
-            contenido[2].classList.remove('show')
-            //contenido[3].classList.toggle('show')
-        }
-
-    }
-
-    function openCv(){
-        window.open(`${cv}`, '_blank')
-    }
+	function openCv() {
+		window.open(`${cv}`, '_blank')
+	}
 </script>
 
-<Basic title='Profesional'
-    description="Hola de nuevo! Aquí te mostraré mi camino educativo, las titulaciones, los proyectos y los diseños que quiero resaltar.">
-    <h1>Profesional</h1>
-    <p>
-        Hola de nuevo! Aquí te mostraré mi camino <b>educativo</b>, las <b>titulaciones</b>, los <b>proyectos</b> y los
-        <b>diseños</b> que quiero resaltar.
-    </p>
-    
-    <section>
-        <div class="titulo" onclick="justOne(1)">
-            <h2>Proyectos realizados</h2>
-            <Arrow />
-        </div>
-        <div class="contenido uno">
-            <article>
-                <a href="https://explounas.com">
-                    <h3>Explouñas 💅🏼
-                        <Html />
-                        <Css />
-                        <Js />
-                    </h3>
-                </a>
-                <p>Este es un sitio web informativo hecho a medida para un emprendimiento.
-                    Fue hecho con tecnologías básicas de la web, sin embargo, que eso no los engañe, es muy bonita.
-                </p>
-                <div class="media">
-                    <div class="tecnologias">
-                        <a class="boton" href="https://explounas.com"><Link /> Visitar</a>
-                        <a class="boton" href="https://github.com/nicolasarevalo/explounas"><Github /> Código</a>
-                    </div>
-                </div>
+<Basic
+	title='Profesional'
+	description='Hola de nuevo! Aquí te mostraré mi camino educativo, las titulaciones, los proyectos y los diseños que quiero resaltar.'
+>
+	<h1>Profesional</h1>
+	<p>
+		Hola de nuevo! Aquí te mostraré mi camino <b>educativo</b>, las <b
+			>titulaciones</b
+		>, los <b>proyectos</b> y los
+		<b>diseños</b> que quiero resaltar.
+	</p>
 
-            </article>
-            <article>
-                <a href="https://perrritos.vercel.app">
-                    <h3>Perritos 🐶
-                        <React />
-                        <Css />
-                    </h3>
-                </a>
-                <p>Aplicación muy interesante donde aprendí que a las APIs también les puedo mandar info (Post, put,
-                    patch, delete). La hice en vanilla con una plantilla de snowpack y tailwind pero tuve problemas para
-                    subirlo a vercel, así que decidí pasarlo a React.
-                </p>
-                <div class="media">
-                    <div class="tecnologias">
-                        <a class="boton" href="https://perritosapp.vercel.app"><Link /> Visitar</a>
-                        <a class="boton" href="https://github.com/nicolasarevalo/perritosapp"><Github /> Código</a>
-                    </div>
-                </div>
+	<section>
+		<div class='titulo' onclick='justOne(1)'>
+			<h2>Proyectos realizados</h2>
+			<Arrow />
+		</div>
+		<div class='contenido uno'>
+			<article>
+				<a href='https://todoapp-ashen.vercel.app'>
+					<h3>
+						Todo App 📝
+						<React />
+						<Supabase />
+						<Picocss />
+					</h3>
+				</a>
+				<p>
+					Este proyecto genial me abrió los horizontes. Al fin me atreví a dejar de hacer solo 
+                    front y pasar a cosas más interesantes. Es un backend <abbr title="As A Service">ass</abbr> pero
+                    pero disfruté mucho haciendolo y conociendo este nuevo mundo. Ahora sí, a hacer cosas <em>that matters.</em>
+				</p>
+				<div class='media'>
+					<div class='tecnologias'>
+						<a class='boton' href='https://todoapp-ashen.vercel.app'><Link /> Visitar</a>
+						<a class='boton' href='https://github.com/nicolasarevalo/todoapp'
+							><Github /> Código</a
+						>
+					</div>
+				</div>
+			</article>
+			<article>
+				<a href='https://explounas.com'>
+					<h3>
+						Explouñas 💅🏼
+						<Html />
+						<Css />
+						<Js />
+					</h3>
+				</a>
+				<p>
+					Este es un sitio web informativo hecho a medida para un
+					emprendimiento. Fue hecho con tecnologías básicas de la web, sin
+					embargo, que eso no los engañe, es muy bonita.
+				</p>
+				<div class='media'>
+					<div class='tecnologias'>
+						<a class='boton' href='https://explounas.com'><Link /> Visitar</a>
+						<a class='boton' href='https://github.com/nicolasarevalo/explounas'
+							><Github /> Código</a
+						>
+					</div>
+				</div>
+			</article>
+			<article>
+				<a href='https://perrritos.vercel.app'>
+					<h3>
+						Perritos 🐶
+						<React />
+						<Css />
+					</h3>
+				</a>
+				<p>
+					Aplicación muy interesante donde aprendí que a las APIs también les
+					puedo mandar info (Post, put, patch, delete). La hice en vanilla con
+					una plantilla de snowpack y tailwind pero tuve problemas para subirlo
+					a vercel, así que decidí pasarlo a React.
+				</p>
+				<div class='media'>
+					<div class='tecnologias'>
+						<a class='boton' href='https://perritosapp.vercel.app'
+							><Link /> Visitar</a
+						>
+						<a
+							class='boton'
+							href='https://github.com/nicolasarevalo/perritosapp'
+							><Github /> Código</a
+						>
+					</div>
+				</div>
+			</article>
+			<article>
+				<a href='https://nicolasarevalo.github.io/giphy-app/'>
+					<h3>
+						Giphy app 😜
+						<React />
+						<Css />
+					</h3>
+				</a>
+				<p>
+					Este proyecto lo creé con el mejor curso que he hecho hasta la fecha.
+					Un año después de haberlo terminado decidí agregarle estilos bonitos.
+					Los hice con CSS puro.
+				</p>
+				<div class='media'>
+					<iframe
+						src='https://nicolasarevalo.github.io/giphy-app/'
+						frameborder='0'></iframe>
 
-            </article>
-            <article>
-                <a href="https://nicolasarevalo.github.io/giphy-app/">
-                    <h3>Giphy app 😜
-                        <React />
-                        <Css />
-                    </h3>
-                </a>
-                <p>Este proyecto lo creé con el mejor curso que he heecho hasta la fecha. Un año después de haberlo
-                    terminado
-                    decidí agregarle estilos bonitos. Los hice con CSS puro.
-                </p>
-                <div class="media">
+					<div class='tecnologias'>
+						<a class='boton' href='https://nicolasarevalo.github.io/giphy-app/'
+							><Link /> Visitar</a
+						>
+						<a class='boton' href='https://github.com/nicolasarevalo/giphy-app'
+							><Github /> Código</a
+						>
+					</div>
+				</div>
+			</article>
+			<article>
+				<a href='https://lunago.vercel.app/'>
+					<h3>Evolución de mi sitio web 😜</h3>
+				</a>
+				<p>
+					Este proyecto me fascina, porque siempre lo hago con pasión. Mi web
+					pasada fue una web que quise que fuera diferente, algo especial. Lo
+					logré, pero no funcionaba tan bien como yo quería. Al final terminé en
+					un boilerplate que no me gusta y no me hacía sentir cómodo. Así que
+					creé uno más simple, pero bien hecho. Y aquí estamos. La primera web
+					si fue más o menos como pude jajaja.
+				</p>
+				<h4>
+					Mi web v.1
+					<Html />
+					<Css />
+				</h4>
+				<div class='media'>
+					<div class='tecnologias centrado'>
+						<a class='boton' href='https://nicolas-arevalo.netlify.app'
+							><Link /> Visitar</a
+						>
+						<a class='boton' href='https://github.com/NicolasArevalo/naweb'
+							><Github /> Código</a
+						>
+					</div>
+				</div>
+				<h4>
+					Mi web v.2
+					<React />
+					<Css />
+				</h4>
+				<div class='media'>
+					<div class='tecnologias centrado'>
+						<a class='boton' href='https://lunago.vercel.app/'
+							><Link /> Visitar</a
+						>
+						<a class='boton' href='https://github.com/nicolasarevalo/lunago'
+							><Github /> Código</a
+						>
+					</div>
+				</div>
+				<span id='v3'
+					>¡Estamos en la versión 3!
+					<AstroLogo />
+				</span>
+			</article>
+		</div>
+	</section>
 
-                    <iframe src="https://nicolasarevalo.github.io/giphy-app/" frameborder="0"></iframe>
+	<section>
+		<div class='titulo' onclick='justOne(2)'>
+			<h2>Títulaciones</h2>
+			<Arrow />
+		</div>
+		<div class='contenido dos'>
+			<span>
+				<a target='_blank' href={Tecnico}>
+					<Pdf /> Técnico en sistemas (SENA)
+				</a>
+			</span>
+			<span>
+				<a target='_blank' href={Scrum}>
+					<Pdf /> SCRUM fundamentals
+				</a>
+			</span>
+			<span>
+				<a target='_blank' href={Udw}>
+					<Pdf /> Universidad del desarrollo web (Udemy)
+				</a>
+			</span>
+			<span>
+				<a target='_blank' href={Pjs}>
+					<Pdf /> Profesional de Javascript (Platzi)
+				</a>
+			</span>
+			<span>
+				<a target='_blank' href={Id}>
+					<Pdf /> Inglés para developers (Platzi)
+				</a>
+			</span>
 
-                    <div class="tecnologias">
-                        <a class="boton" href="https://nicolasarevalo.github.io/giphy-app/"><Link /> Visitar</a>
-                        <a class="boton" href="https://github.com/nicolasarevalo/giphy-app"><Github /> Código</a>
-                    </div>
-                </div>
+			<span>Entre otros...</span>
+		</div>
+	</section>
 
-            </article>
-            <article>
-                <a href="https://lunago.vercel.app/">
-                    <h3>Evolución de mi sitio web 😜</h3>
-                </a>
-                <p>Este proyecto me fascina, porque siempre lo hago con pasión. Mi web pasada fue una web que quise que
-                    fuera diferente,
-                    algo especial. Lo logré, pero no funcionaba tan bien como yo quería. Al final terminé en un
-                    boilerplate que no me gusta
-                    y no me hacía sentir cómodo. Así que creé uno más simple, pero bien hecho. Y aquí estamos. La
-                    primera web si fue más o menos
-                    como pude jajaja.
-                </p>
-                <h4>Mi web v.1
-                    <Html />
-                    <Css />
-                </h4>
-                <div class="media">
-                    <div class="tecnologias centrado">
-                        <a class="boton" href="https://nicolas-arevalo.netlify.app"><Link /> Visitar</a>
-                        <a class="boton" href="https://github.com/NicolasArevalo/naweb"><Github /> Código</a>
-                    </div>
-                </div>
-                <h4>Mi web v.2
-                    <React />
-                    <Css />
-                </h4>
-                <div class="media">
-                    <div class="tecnologias centrado">
-                        <a class="boton" href="https://lunago.vercel.app/"><Link /> Visitar</a>
-                        <a class="boton" href="https://github.com/nicolasarevalo/lunago"><Github /> Código</a>
-                    </div>
-                </div>
-                <span id="v3">¡Estamos en la versión 3!
-                    <AstroLogo />
-                </span>
-            </article>
+	<section>
+		<div class='titulo' onclick='justOne(3)'>
+			<h2>Idiomas</h2>
+			<Arrow />
+		</div>
+		<div class='contenido cuatro'>
+			<ol>
+				<li>Español</li>
+				<li>Inglés</li>
+			</ol>
 
+			<span id='porahora'>Por ahora...</span>
+		</div>
+	</section>
 
-        </div>
-    </section>
-
-    <section>
-        <div class="titulo" onclick="justOne(2)">
-            <h2>Títulaciones</h2>
-            <Arrow />
-        </div>
-        <div class="contenido dos">
-            <span>
-                <a target="_blank" href={Tecnico}>
-                    <Pdf /> Técnico en sistemas (SENA)
-                </a>
-            </span>
-            <span>
-                <a target="_blank" href={Scrum}>
-                    <Pdf /> SCRUM fundamentals
-                </a>
-            </span>
-            <span>
-                <a target="_blank" href={Udw}>
-                    <Pdf /> Universidad del desarrollo web (Udemy)
-                </a>
-            </span>
-            <span>
-                <a target="_blank" href={Pjs}>
-                    <Pdf /> Profesional de Javascript (Platzi)
-                </a>
-            </span>
-            <span>
-                <a target="_blank" href={Id}>
-                    <Pdf /> Inglés para developers (Platzi)
-                </a>
-            </span>
-
-            <span>Entre otros...</span>
-
-
-        </div>
-    </section>
-
-    <section>
-        <div class="titulo" onclick="justOne(3)">
-            <h2>Idiomas</h2>
-            <Arrow />
-        </div>
-        <div class="contenido cuatro">
-            <ol>
-                <li>Español</li>
-                <li>Inglés</li>
-            </ol>
-
-            <span id="porahora">Por ahora...</span>
-
-
-        </div>
-    </section>
-
-    <div class="botonera">
-        <a class="boton" href="https://niiico.com/contacto"><User /> ¿Quieres contratarme?</a>
-        <a class="boton" target="_blank" href={cv}><Dw /> Descarga mi hoja de vida</a>
-    </div>
-    
+	<div class='botonera'>
+		<a class='boton' href='https://niiico.com/contacto'
+			><User /> ¿Quieres contratarme?</a
+		>
+		<a class='boton' target='_blank' href={cv}
+			><Dw /> Descarga mi hoja de vida</a
+		>
+	</div>
 </Basic>
 
 <style>
-    .botonera{
-        text-align: center;
-        margin: 1rem 0;
-        display: flex;
-        justify-content: center;
-        gap: 0.5rem;
-        flex-wrap: wrap ;
-        align-items: center;
-    }
-    .loguito{
-        width: 20px;
+	.botonera {
+		text-align: center;
+		margin: 1rem 0;
+		display: flex;
+		justify-content: center;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+	.loguito {
+		width: 20px;
 		height: 20px;
 		fill: var(--color-gray-200);
-    }
-    section {
-        margin: .8rem 0;
-    }
+	}
+	section {
+		margin: 0.8rem 0;
+	}
 
-    section:first-of-type {
-        margin: 2rem 0 0 0;
-    }
+	section:first-of-type {
+		margin: 2rem 0 0 0;
+	}
 
-    .titulo {
-        display: flex;
-        justify-content: left;
-        align-items: center;
-        flex-flow: row wrap;
-        gap: 1rem;
-        cursor: pointer;
-    }
+	.titulo {
+		display: flex;
+		justify-content: left;
+		align-items: center;
+		flex-flow: row wrap;
+		gap: 1rem;
+		cursor: pointer;
+	}
 
-    .titulo h2 {
-        font-weight: 600;
-    }
+	.titulo h2 {
+		font-weight: 600;
+	}
 
-    .show {
-        display: flex !important;
-        opacity: 0;
-        animation: appear .2s linear .2s forwards;
-    }
+	.show {
+		display: flex !important;
+		opacity: 0;
+		animation: appear 0.2s linear 0.2s forwards;
+	}
 
-    .contenido {
-        margin: .7rem 0;
-        display: none;
-        flex-flow: column wrap;
-        padding-inline-start: var(--pls);
-        gap: .5rem;
-    }
+	.contenido {
+		margin: 0.7rem 0;
+		display: none;
+		flex-flow: column wrap;
+		padding-inline-start: var(--pls);
+		gap: 0.5rem;
+	}
 
-    .uno {
-        padding-inline-start: calc(var(--pls) - 10px) !important;
-    }
+	.uno {
+		padding-inline-start: calc(var(--pls) - 10px) !important;
+	}
 
-    article:last-child {
-        margin-bottom: 2rem;
-    }
+	article:last-child {
+		margin-bottom: 2rem;
+	}
 
-    .contenido span {
-        display: flex;
-        align-content: center;
-    }
+	.contenido span {
+		display: flex;
+		align-content: center;
+	}
 
-    .contenido span a {
-        transform: translateY(-3px);
+	.contenido span a {
+		transform: translateY(-3px);
+	}
 
-    }
+	.contenido span a:hover {
+		color: var(--theme-accent);
+	}
 
-    .contenido span a:hover {
-        color: var(--theme-accent)
-    }
+	li::marker {
+		font-size: xx-large;
+		color: var(--color-gray-400);
+	}
 
-    li::marker {
-        font-size: xx-large;
-        color: var(--color-gray-400)
-    }
+	iframe {
+		aspect-ratio: 16/9;
+		background-color: white;
+		margin-top: 1rem;
+	}
 
-    iframe {
-        aspect-ratio: 16/9;
-        background-color: white;
-        margin-top: 1rem;
+	h4 {
+		margin: 1rem 0 0 0;
+		text-align: center;
+	}
 
-    }
+	.media {
+		max-width: 100%;
+		display: flex;
+		flex-direction: column;
+	}
 
-    h4 {
-        margin: 1rem 0 0 0;
-        text-align: center;
-    }
+	.media:first-child {
+		width: 200px;
+	}
 
-    .media {
-        max-width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
+	.tecnologias {
+		margin: 2rem 0;
+		display: flex;
+		flex-flow: row wrap;
+		gap: 0.5rem;
+		width: 100%;
+		justify-content: flex-end;
+	}
 
-    .media:first-child {
-        width: 200px;
-    }
+	.centrado {
+		justify-content: center !important ;
+	}
 
-    .tecnologias {
-        margin: 2rem 0;
-        display: flex;
-        flex-flow: row wrap;
-        gap: .5rem;
-        width: 100%;
-        justify-content: flex-end;
-    }
+	#v3 {
+		width: 100%;
+		justify-content: center;
+	}
 
-    .centrado{
-        justify-content: center!important ;
-    }
+	#porahora {
+		color: var(--color-gray-400);
+		margin-top: 1rem;
+	}
 
-    #v3 {
-        width: 100%;
-        justify-content: center;
-    }
+	svg {
+		width: 45px !important;
+		height: 45px !important;
+	}
 
-    #porahora {
-        color: var(--color-gray-400);
-        margin-top: 1rem;
-    }
+	@media (max-width: 760px) {
+		.titulo h2 {
+			font-size: x-large;
+		}
 
-    svg {
-        width: 45px !important;
-        height: 45px !important;
-    }
+		.uno {
+			padding-inline-start: 10px !important;
+		}
 
-    @media(max-width: 760px) {
-        .titulo h2 {
-            font-size: x-large;
-        }
+		.tecnologias {
+			margin: 2rem 0;
+			display: flex;
+			flex-flow: column wrap;
+			padding: 0 10px;
+			gap: 0.5rem;
+			width: 100%;
+			justify-content: center;
+		}
 
-        .uno {
-            padding-inline-start: 10px !important;
-        }
+		.media {
+			margin: 0;
+		}
 
-        .tecnologias {
-            margin: 2rem 0;
-            display: flex;
-            flex-flow: column wrap;
-            padding: 0 10px;
-            gap: .5rem;
-            width: 100%;
-            justify-content: center;
-        }
-
-        .media {
-            margin: 0;
-        }
-
-        iframe {
-            display: none;
-        }
-    }
+		iframe {
+			display: none;
+		}
+	}
 </style>
