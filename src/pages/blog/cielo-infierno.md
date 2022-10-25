@@ -5,7 +5,7 @@ setup: |
 title: Cielo e infierno ❤️‍🔥
 publishDate: 25 Oct 2022
 
-description: Este tema es de las cosas más místicas que existen en nuestra sociedad. Todos tienen su propia versión por religiones, creencias, incluso leyendas. Me parece muy interesante la creatividad de las personas...
+description: Este tema es de las cosas más místicas que existen en nuestra sociedad. Todos tienen su propia versión por religiones, creencias, incluso leyendas...
 ---
 
 Este tema es de las cosas más místicas que existen en nuestra sociedad. Todos tienen su propia versión por religiones, creencias, incluso leyendas. Me parece muy interesante la creatividad de las personas. A veces no se dan cuenta pero esto es creatividad, aunque tú sigas el pensamiento de una corriente religiosa, o tomes la idea de alguien, siempre le pones tu sello, tu creatividad se presenta en este tipo de cosas de las que no tenemos ni idea pero de las que queremos opinar. Es como conocer lo que tú sientes con cosas que puedo entender. 
