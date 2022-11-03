@@ -53,7 +53,7 @@
 	color-scheme: light;
 	--theme-accent: var(--color-purple);
 	--theme-accent-rgb: var(--color-purple-rgb);
-	--theme-accent-opacity: 0.1;
+	--theme-accent-opacity: 0.3;
 	--theme-divider: var(--color-gray-100);
 	--theme-text: var(--color-gray-800);
 	--theme-text-light: var(--color-gray-600);
@@ -76,12 +76,12 @@ body {
 
 :root.theme-dark {
 	color-scheme: dark;
-	--theme-accent-opacity: 0.3;
-	--theme-divider: var(--color-gray-900);
+	--theme-accent-opacity: 0.8;
+	--theme-divider: var(--color-purple);
 	--theme-text: var(--color-gray-200);
 	--theme-text-light: var(--color-red);
 	--theme-text-lighter: var(--color-red);
-	--theme-bg: var(--color-black);
+	--theme-bg: var(--color-gray-800);
 	--theme-bg-offset: var(--color-gray-900);
 	--theme-code-inline-bg: var(--color-gray-800);
 	--theme-code-text: var(--color-gray-200);
@@ -392,7 +392,7 @@ body {
         cursor: pointer;
         border: none;
         padding: 0.3rem 1rem 0.5rem ;
-        background-color: var(--color-gray-900);
+        background-color: var(--theme-accent);
         text-align: center;
         border-radius: var(--br);
         color: var(--color-gray-100)!important;
