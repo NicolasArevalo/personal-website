@@ -1,72 +1,97 @@
 ---
 export interface Props {
-    post: any;
+	post: any
 }
 
-const { post } = Astro.props;
+const { post } = Astro.props
 ---
 
-<article class="post-card">
-    <header>
-        <p class="publish-date">{post.frontmatter.publishDate}</p>
-        <a href={post.url}>
-            <h1 class="title">{post.frontmatter.title}</h1>
-        </a>
-    </header>
-    <p>{post.frontmatter.description}</p>
-    <a class="boton" href={post.url}>
-        <svg class="logo mas" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <title>Leer más</title>
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-          </svg>
-        Leer más</a>
-</article>
+<a href={post.url}>
+	<article class='post-card'>
+		<header>
+			<p class='publish-date'>{post.frontmatter.publishDate}</p>
+			<a href={post.url}>
+				<h1 class='title'>{post.frontmatter.title}</h1>
+			</a>
+		</header>
+		<!-- <p>{post.frontmatter.description}</p> -->
+		<!-- <a class='boton at-bottom' href={post.url}>
+			<svg
+				class='logo mas'
+				xmlns='http://www.w3.org/2000/svg'
+				class='h-6 w-6'
+				fill='none'
+				viewBox='0 0 24 24'
+				stroke='currentColor'
+				stroke-width='2'
+			>
+				<title>Leer más</title>
+				<path
+					stroke-linecap='round'
+					stroke-linejoin='round'
+					d='M12 6v6m0 0v6m0-6h6m-6 0H6'></path>
+			</svg>
+			Leer más</a
+		> -->
+	</article>
+</a>
 
 <style>
-    .post-card {
-        width: 240px;
-        min-height: 230px;
-        max-width: 230px;
-        height: max-content;
+    a{
+        width: auto;
+    }
+	.post-card {
+		/* width: 240px;
+		min-height: 230px;
+		max-height: 235px;
+		max-width: 230px;
+		height: max-content;
+		background: var(--color-white);
+		padding: 0.6rem;
+		margin-bottom: 0.8rem;
+		display: flex;
+		flex-direction: column;
+		
+        padding-bottom: 10px; */
+
+        padding: 0.1rem 0.6rem;
         background: var(--color-white);
-        padding: .6rem;
-        margin-bottom: .8rem;
-        display: flex;
-        flex-direction: column;
         box-shadow: var(--shadow);
-        border-radius: var(--br);
-    }
+		border-radius: var(--br);
+		max-width: 300px;
+		position: relative;
+	}
 
-    header p {
-        font-size: .8rem;
-    }
+	header p {
+		font-size: 0.8rem;
+	}
 
-    header .title {
-        font-size: 1.6em;
-        margin-bottom: .8rem;
-    }
+	header .title {
+		font-size: 1.6em;
+		margin-bottom: 0.8rem;
+	}
 
-    p {
-        font-size: .75em;
-    }
+	p {
+		font-size: 0.75em;
+	}
 
-    .post-card>a {
-        margin-top: 1rem;
-        font-size: .8em;
+	.post-card > a {
+		margin-top: 1rem;
+		font-size: 0.8em;
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 
-    .mas{
-        transform: translateY(1px);
-    }
+	.mas {
+		transform: translateY(1px);
+	}
 
-    @media (max-width: 760px) {
-        .post-card {
-            width: 215px;
-            height: auto;
-        }
-    }
+	@media (max-width: 760px) {
+		.post-card {
+			min-width: 230px;
+			/* height: auto; */
+		}
+	}
 </style>

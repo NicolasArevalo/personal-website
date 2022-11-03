@@ -20,6 +20,7 @@ let latestPosts = allPosts.slice(0, 3);
 <style>
     section {
         margin: 2em 0;
+        
     }
 
     .MiniblogPrev {
@@ -42,13 +43,16 @@ let latestPosts = allPosts.slice(0, 3);
     .selection {
         display: flex;
         justify-content: center;
-        gap: 1rem;
+        align-items: stretch;
+        gap: .5rem;
+        flex-direction: row;
+        padding-bottom: 20px;
     }
 
     @media (max-width: 760px) {
         .selection {
-            display: flex;
-            justify-content: space-between;
+            /* display: flex;
+            justify-content: space-between; */
         }
 
         .MiniblogPrev {
