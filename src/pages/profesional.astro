@@ -27,6 +27,7 @@ import Css from '@components/Logos/Css.astro'
 import Tailwind from '@components/Logos/Tailwind.astro'
 import Picocss from '@components/Logos/Picocss.astro'
 import Js from '@components/Logos/Js.astro'
+import Socketio from '@components/Logos/Socketio.astro'
 import React from '@components/Logos/React.astro'
 import Supabase from '@components/Logos/supabase.astro'
 import Github from '@components/Logos/GithubMini.astro'
@@ -48,25 +49,36 @@ import User from '@components/Logos/User.astro'
 			contenido[1].classList.remove('show')
 			contenido[2].classList.remove('show')
 			//contenido[3].classList.remove('show')
+			titulo1.classList.remove('muted')
+			titulo2.classList.add('muted')
+			titulo3.classList.add('muted')
 		}
 		if (el === 2) {
 			contenido[0].classList.remove('show')
 			contenido[1].classList.toggle('show')
 			contenido[2].classList.remove('show')
 			//contenido[3].classList.remove('show')
+
+			titulo1.classList.add('muted')
+			titulo2.classList.remove('muted')
+			titulo3.classList.add('muted')
+
 		}
 		if (el === 3) {
 			contenido[0].classList.remove('show')
 			contenido[1].classList.remove('show')
 			contenido[2].classList.toggle('show')
 			//contenido[3].classList.remove('show')
+			titulo1.classList.add('muted')
+			titulo2.classList.add('muted')
+			titulo3.classList.remove('muted')
 		}
-		if (el === 4) {
+/* 		if (el === 4) {
 			contenido[0].classList.remove('show')
 			contenido[1].classList.remove('show')
 			contenido[2].classList.remove('show')
 			//contenido[3].classList.toggle('show')
-		}
+		} */
 	}
 
 	function openCv() {
@@ -86,12 +98,46 @@ import User from '@components/Logos/User.astro'
 		<b>diseños</b> que quiero resaltar.
 	</p>
 
-	<section>
+	<div class='breadcrumb'>
 		<div class='titulo' onclick='justOne(1)'>
-			<h2>Proyectos realizados</h2>
-			<Arrow />
+			<h2 id="titulo1" class="">Proyectos realizados</h2>
 		</div>
-		<div class='contenido uno'>
+		<div class='titulo' onclick='justOne(2)'>
+			<h2 id="titulo2" class="muted">Títulaciones</h2>
+		</div>
+		<div class='titulo' onclick='justOne(3)'>
+			<h2 id="titulo3" class="muted">Idiomas</h2>
+		</div>
+	</div>
+
+	<section>
+		<div class='contenido uno show'>
+			<article>
+				<a href='https://webchat-production.up.railway.app'>
+					<h3>
+						WebChat 💭
+						<Socketio />
+						<Js />
+					</h3>
+				</a>
+				<p>
+					Continuando con la línea de cosas <em>that matters,</em> he creado esta
+					linda app para chatear en tiempo real. ¿No te suena épico? Pues a mí sí.
+					La hice siguiendo el curso de Platzi de Aplicaciones en tiempo real. Estuvo
+					bueno pero yo lo mejoré y logré desplegarlo (nunca había desplegado backend).
+					Disfrútenlo.
+				</p>
+				<div class='media'>
+					<div class='tecnologias'>
+						<a class='boton' href='https://webchat-production.up.railway.app'
+							><Link /> Visitar</a
+						>
+						<a class='boton' href='https://github.com/nicolasarevalo/webchat'
+							><Github /> Código</a
+						>
+					</div>
+				</div>
+			</article>
 			<article>
 				<a href='https://todoapp-ashen.vercel.app'>
 					<h3>
@@ -102,13 +148,17 @@ import User from '@components/Logos/User.astro'
 					</h3>
 				</a>
 				<p>
-					Este proyecto genial me abrió los horizontes. Al fin me atreví a dejar de hacer solo 
-                    front y pasar a cosas más interesantes. Es un backend <abbr title="As A Service">AAS</abbr> pero
-                    pero disfruté mucho haciendolo y conociendo este nuevo mundo. Ahora sí, a hacer cosas <em>that matters.</em>
+					Este proyecto genial me abrió los horizontes. Al fin me atreví a dejar
+					de hacer solo front y pasar a cosas más interesantes. Es un backend <abbr
+						title='As A Service'>AAS</abbr
+					> pero pero disfruté mucho haciendolo y conociendo este nuevo mundo. Ahora
+					sí, a hacer cosas <em>that matters.</em>
 				</p>
 				<div class='media'>
 					<div class='tecnologias'>
-						<a class='boton' href='https://todoapp-ashen.vercel.app'><Link /> Visitar</a>
+						<a class='boton' href='https://todoapp-ashen.vercel.app'
+							><Link /> Visitar</a
+						>
 						<a class='boton' href='https://github.com/nicolasarevalo/todoapp'
 							><Github /> Código</a
 						>
@@ -244,10 +294,6 @@ import User from '@components/Logos/User.astro'
 	</section>
 
 	<section>
-		<div class='titulo' onclick='justOne(2)'>
-			<h2>Títulaciones</h2>
-			<Arrow />
-		</div>
 		<div class='contenido dos'>
 			<span>
 				<a target='_blank' href={Tecnico}>
@@ -280,10 +326,6 @@ import User from '@components/Logos/User.astro'
 	</section>
 
 	<section>
-		<div class='titulo' onclick='justOne(3)'>
-			<h2>Idiomas</h2>
-			<Arrow />
-		</div>
 		<div class='contenido cuatro'>
 			<ol>
 				<li>Español</li>
@@ -326,6 +368,15 @@ import User from '@components/Logos/User.astro'
 	section:first-of-type {
 		margin: 2rem 0 0 0;
 	}
+	.muted{
+		color: #cccc;
+	}
+	.breadcrumb{
+		display: flex;
+		justify-content: space-evenly;
+		width: 100%;
+		margin: 2rem 0 0 0;
+	}
 
 	.titulo {
 		display: flex;
@@ -338,6 +389,7 @@ import User from '@components/Logos/User.astro'
 
 	.titulo h2 {
 		font-weight: 600;
+		font-size: x-large;
 	}
 
 	.show {
@@ -347,7 +399,7 @@ import User from '@components/Logos/User.astro'
 	}
 
 	.contenido {
-		margin: 0.7rem 0;
+		margin: 0.7rem 0 4rem 0;
 		display: none;
 		flex-flow: column wrap;
 		padding-inline-start: var(--pls);

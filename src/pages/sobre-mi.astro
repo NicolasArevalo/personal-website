@@ -37,9 +37,8 @@ import img10 from '@assets/slider-yo/10.jpeg'
 		Hola, soy Nicolás. Soy un apasionado de la tecnología y de la vida que se
 		creó un blog para compartir todo lo que tiene por decir. Actualmente tengo
 		20 años pero un carácter de 40 xD. Si quieres conocer más acerca de mi vida
-		profesional, te recomiendo ir a mi <a href={links.host + '/profesional'}>
-			<i>portafolio</i>
-		</a>, donde comparto mis proyectos.
+		profesional, te recomiendo ir a mi <a id="to-portafolio" href={links.host + '/profesional'}>
+			<i>portafolio</i></a>, donde comparto mis proyectos.
 	</p>
 
 	<section>
@@ -154,6 +153,9 @@ import img10 from '@assets/slider-yo/10.jpeg'
 		font-style: normal;
 		font-size: 0.7rem;
         text-decoration: underline;
+	}
+	#to-portafolio{
+		font-size: inherit;
 	}
 
 	.slider__img {
