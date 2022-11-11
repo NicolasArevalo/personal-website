@@ -397,10 +397,10 @@ body {
         border-radius: var(--br);
         color: var(--color-gray-100)!important;
         font-weight: 600;
-        transition: background var(--transition-time) !important;
+        transition: box-shadow var(--transition-time) !important;
     }
     .boton:hover{
-        background: var(--theme-accent)!important;
+		box-shadow: 1px 1px 4px rgba(82, 82, 82, 0.4);
     }
 
 

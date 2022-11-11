@@ -50,6 +50,7 @@ import User from '@components/Logos/User.astro'
 			contenido[2].classList.remove('show')
 			//contenido[3].classList.remove('show')
 			titulo1.classList.remove('muted')
+
 			titulo2.classList.add('muted')
 			titulo3.classList.add('muted')
 		}
@@ -60,9 +61,10 @@ import User from '@components/Logos/User.astro'
 			//contenido[3].classList.remove('show')
 
 			titulo1.classList.add('muted')
-			titulo2.classList.remove('muted')
-			titulo3.classList.add('muted')
 
+			titulo2.classList.remove('muted')
+
+			titulo3.classList.add('muted')
 		}
 		if (el === 3) {
 			contenido[0].classList.remove('show')
@@ -71,14 +73,9 @@ import User from '@components/Logos/User.astro'
 			//contenido[3].classList.remove('show')
 			titulo1.classList.add('muted')
 			titulo2.classList.add('muted')
+
 			titulo3.classList.remove('muted')
 		}
-/* 		if (el === 4) {
-			contenido[0].classList.remove('show')
-			contenido[1].classList.remove('show')
-			contenido[2].classList.remove('show')
-			//contenido[3].classList.toggle('show')
-		} */
 	}
 
 	function openCv() {
@@ -100,13 +97,13 @@ import User from '@components/Logos/User.astro'
 
 	<div class='breadcrumb'>
 		<div class='titulo' onclick='justOne(1)'>
-			<h2 id="titulo1" class="">Proyectos realizados</h2>
+			<h2 id='titulo1' class=''>Proyectos realizados</h2>
 		</div>
 		<div class='titulo' onclick='justOne(2)'>
-			<h2 id="titulo2" class="muted">Títulaciones</h2>
+			<h2 id='titulo2' class='muted'>Títulaciones</h2>
 		</div>
 		<div class='titulo' onclick='justOne(3)'>
-			<h2 id="titulo3" class="muted">Idiomas</h2>
+			<h2 id='titulo3' class='muted'>Idiomas</h2>
 		</div>
 	</div>
 
@@ -368,10 +365,11 @@ import User from '@components/Logos/User.astro'
 	section:first-of-type {
 		margin: 2rem 0 0 0;
 	}
-	.muted{
-		color: #cccc;
+	.muted {
+		color: rgb(170, 170, 170);
 	}
-	.breadcrumb{
+
+	.breadcrumb {
 		display: flex;
 		justify-content: space-evenly;
 		width: 100%;
@@ -483,7 +481,7 @@ import User from '@components/Logos/User.astro'
 
 	@media (max-width: 760px) {
 		.titulo h2 {
-			font-size: x-large;
+			font-size: small;
 		}
 
 		.uno {
