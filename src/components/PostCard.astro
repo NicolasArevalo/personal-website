@@ -11,7 +11,7 @@ const { post } = Astro.props
 		<header>
 			<p class='publish-date'>{post.frontmatter.publishDate}</p>
 			<a href={post.url}>
-				<h1 class='title'>{post.frontmatter.title}</h1>
+				<h2 class='title'>{post.frontmatter.title}</h2>
 			</a>
 		</header>
 		<!-- <p>{post.frontmatter.description}</p> -->
@@ -41,18 +41,6 @@ const { post } = Astro.props
         width: auto;
     }
 	.post-card {
-		/* width: 240px;
-		min-height: 230px;
-		max-height: 235px;
-		max-width: 230px;
-		height: max-content;
-		background: var(--color-white);
-		padding: 0.6rem;
-		margin-bottom: 0.8rem;
-		display: flex;
-		flex-direction: column;
-		
-        padding-bottom: 10px; */
 
         padding: 0.1rem 0.6rem;
         background: var(--color-white);
@@ -67,8 +55,8 @@ const { post } = Astro.props
 	}
 
 	header .title {
-		font-size: 1.6em;
-		margin-bottom: 0.8rem;
+		font-size: 1.3em;
+		margin-bottom: 0.6rem;
 	}
 
 	p {
