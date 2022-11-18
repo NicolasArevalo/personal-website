@@ -6,7 +6,6 @@
 		'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono',
 		'Nimbus Mono L', Monaco, 'Courier New', Courier, monospace;
 
-	--shadow: 0px 6px 9px -3px rgba(0,0,0,0.1);
 	--color-white: #fff;
 	--color-black: #000014;
 
@@ -46,7 +45,11 @@
 	--animation: 0.08s linear;
 	--btn-padding: 6px 8px;
 	--pls: 40px;
-	--transition-time: .2s;
+	--transition-time: .3s;
+
+	--shadow: 0px 6px 9px -3px rgba(0,0,0,0.1);
+	--shadow-buena: 1px 1px 4px rgba(82, 82, 82, 0.4);
+	--shadow-buena-hovered: 1px 3px 5px rgba(82, 82, 82, 0.6);
 }
 
 :root {
@@ -398,9 +401,11 @@ body {
         color: var(--color-gray-100)!important;
         font-weight: 600;
         transition: box-shadow var(--transition-time) !important;
+
+		box-shadow: var(--shadow-buena);
     }
     .boton:hover{
-		box-shadow: 1px 1px 4px rgba(82, 82, 82, 0.4);
+		box-shadow: var(--shadow-buena-hovered);
     }
 
 

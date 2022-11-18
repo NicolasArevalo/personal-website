@@ -47,7 +47,6 @@ import Socketio from '@components/Logos/socketio.astro'
 
 			titulo1.classList.add('muted')
 			titulo2.classList.remove('muted')
-
 		}
 	}
 
@@ -62,10 +61,12 @@ import Socketio from '@components/Logos/socketio.astro'
 >
 	<h1>Profesional</h1>
 	<p>
-		Hola de nuevo! Aquí te mostraré mi camino <b>educativo</b>, las <b>titulaciones</b>
+		Hola de nuevo! Aquí te mostraré mi camino <b>educativo</b>, las <b
+			>titulaciones</b
+		>
 		, los <b>proyectos</b> y los <b>diseños</b> que quiero resaltar.
-		<br /> Mi nivel de inglés es <b>B2</b>.
-		Perfectamente conversacional por si quieres charlar. 😜
+		<br /> Mi nivel de inglés es <b>B2</b>. Perfectamente conversacional por si
+		quieres charlar. 😜
 	</p>
 	<div class='botonera'>
 		<a class='boton' href='https://niiico.com/contacto'
@@ -299,7 +300,6 @@ import Socketio from '@components/Logos/socketio.astro'
 			<p>Entre otros...</p>
 		</div>
 	</section>
-
 </Basic>
 
 <style>
@@ -312,16 +312,25 @@ import Socketio from '@components/Logos/socketio.astro'
 		flex-wrap: wrap;
 		align-items: center;
 	}
+
 	.loguito {
 		width: 20px;
 		height: 20px;
 		fill: var(--color-gray-200);
 	}
-	section:has(.uno){
-		background: linear-gradient(0deg, rgba(255,255,255,0) 95%, rgba(67,67,67,0.025) 100%);
+	section:has(.uno) {
+		background: linear-gradient(
+			0deg,
+			rgba(255, 255, 255, 0) 95%,
+			rgba(67, 67, 67, 0.039) 100%
+		);
 	}
 	section {
-		background: linear-gradient(0deg, rgba(255,255,255,0) 50%, rgba(67,67,67,0.025) 100%);
+		background: linear-gradient(
+			0deg,
+			rgba(255, 255, 255, 0) 50%,
+			rgba(67, 67, 67, 0.039) 100%
+		);
 		border-radius: var(--br);
 	}
 	.muted {
@@ -347,7 +356,7 @@ import Socketio from '@components/Logos/socketio.astro'
 		cursor: pointer;
 		padding: 10px;
 		border-radius: var(--br) var(--br) 0 0;
-		background: rgba(67,67,67,0.025);
+		background: rgba(67, 67, 67, 0.039);
 	}
 
 	.titulo h2 {
@@ -471,6 +480,9 @@ import Socketio from '@components/Logos/socketio.astro'
 
 		iframe {
 			display: none;
+		}
+		.botonera .boton {
+			font-size: small;
 		}
 	}
 </style>

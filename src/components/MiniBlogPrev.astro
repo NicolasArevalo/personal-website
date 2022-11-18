@@ -1,63 +1,62 @@
 ---
 import PostCard from '@components/PostCard.astro'
-let allPosts = await Astro.glob('../pages/blog/*.md');
-allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
-let latestPosts = allPosts.slice(0, 3);
+let allPosts = await Astro.glob('../pages/blog/*.md')
+allPosts = allPosts.sort(
+	(a, b) =>
+		new Date(b.frontmatter.publishDate).valueOf() -
+		new Date(a.frontmatter.publishDate).valueOf()
+)
+let latestPosts = allPosts.slice(0, 3)
 ---
 
 <section>
-    <h4>Publicaciones recientes...</h4>
-    <div class="MiniblogPrev">
-
-        <div class="selection">
-            {latestPosts.map( (p) =>
-            <PostCard post={p} />)}
-        </div>
-    </div>
+	<h4>Publicaciones recientes...</h4>
+	<div class='MiniblogPrev'>
+		<div class='cards'>
+			{latestPosts.map(p => <PostCard post={p} />)}
+		</div>
+	</div>
 </section>
 
-
 <style>
-    section {
-        margin: 2em 0;
-        
-    }
+	section {
+		margin: 2em 0;
+	}
 
-    .MiniblogPrev {
-        display: flex;
-        flex-flow: column wrap;
-        max-width: 100%;
-        overflow-x: auto;
-        overflow-y: hidden;
-    }
+	.cards {
+		display: grid;
 
-    .MiniblogPrev::-webkit-scrollbar {
-        height: 10px;
-    }
+		grid-template-columns: 1fr 1fr 1fr;
+		place-items: center;
+		gap: 10px;
+		max-width: 100%;
+	}
 
-    .MiniblogPrev::-webkit-scrollbar-thumb {
-        background: rgba(var(--color-purple-rgb), .5);
-        border-radius: 6px;
-    }
+	.MiniblogPrev {
+		display: flex;
+		flex-flow: column wrap;
+		max-width: 100%;
+	}
 
-    .selection {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: stretch;
-        gap: .5rem;
-        flex-direction: row;
-        padding-bottom: 20px;
-    }
+	.MiniblogPrev::-webkit-scrollbar {
+		height: 10px;
+	}
 
-    @media (max-width: 760px) {
-        .selection {
-            /* display: flex;
-            justify-content: space-between; */
-        }
+	.MiniblogPrev::-webkit-scrollbar-thumb {
+		background: rgba(var(--color-purple-rgb), 0.5);
+		border-radius: 6px;
+	}
 
-        .MiniblogPrev {
-            display: flex;
+	@media (max-width: 760px) {
+		.cards {
+			display: flex;
             flex-flow: column wrap;
-        }
-    }
+            
+		}
+
+		.MiniblogPrev {
+			display: flex;
+			flex-flow: column wrap;
+		}
+	}
 </style>
