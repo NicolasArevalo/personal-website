@@ -2,7 +2,7 @@ const links = {
     host: '',
     youtube: 'https://www.youtube.com/@_niiico',
     notion: 'https://nico.ghost.io',
-    instagram: 'https://www.instagram.com/_lunago28',
+    instagram: 'https://www.instagram.com/_niiico28',
     twitter: 'https://twitter.com/_niiico28',
     github: 'https://github.com/NicolasArevalo',
     linkedin: 'https://www.linkedin.com/in/nicolás-arévalo-842839188/',
