@@ -1,0 +1,19 @@
+---
+import LayoutLink from '@layouts/LayoutLink.astro'
+import Yt from '@components/Logos/Youtube.astro'
+
+import links from '@components/links'
+---
+
+<LayoutLink title='Youtube de Nico' nombre='Youtube' link={links.youtube}>
+	<div>
+        <Yt />
+    </div>
+</LayoutLink>
+
+<style>
+    div{
+        display: inline-block;
+        transform: scale(2);
+    }
+</style>

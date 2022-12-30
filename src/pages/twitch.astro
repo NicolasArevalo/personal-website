@@ -1,0 +1,19 @@
+---
+import LayoutLink from '@layouts/LayoutLink.astro'
+import Twitch from '@components/Logos/Twitch.astro'
+
+import links from '@components/links'
+---
+
+<LayoutLink title='Twitch de Nico' nombre='Twitch' link={links.twitch}>
+	<div>
+        <Twitch />
+    </div>
+</LayoutLink>
+
+<style>
+    div{
+        display: inline-block;
+        transform: scale(2);
+    }
+</style>

@@ -1,0 +1,19 @@
+---
+import LayoutLink from '@layouts/LayoutLink.astro'
+import Twitter from '@components/Logos/twitter.astro'
+
+import links from '@components/links'
+---
+
+<LayoutLink title='Twitter de Nico' nombre='Twitter' link={links.twitter}>
+	<div>
+        <Twitter />
+    </div>
+</LayoutLink>
+
+<style>
+    div{
+        display: inline-block;
+        transform: scale(2);
+    }
+</style>

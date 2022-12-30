@@ -1,0 +1,19 @@
+---
+import LayoutLink from '@layouts/LayoutLink.astro'
+import Linkedin from '@components/Logos/Linkedin.astro'
+
+import links from '@components/links'
+---
+
+<LayoutLink title='Linkedin de Nico' nombre='Linkedin' link={links.linkedin}>
+	<div>
+        <Linkedin />
+    </div>
+</LayoutLink>
+
+<style>
+    div{
+        display: inline-block;
+        transform: scale(2);
+    }
+</style>

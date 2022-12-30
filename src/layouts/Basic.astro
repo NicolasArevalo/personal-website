@@ -17,7 +17,7 @@ const { title, description } = Astro.props
 			rel='stylesheet'
 			href='https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-lucario.css'
 		/>
-		<BaseHead {title} {description} />
+		<BaseHead title={title}  description={description} />
 		<style>
 			header {
 				width: 100%;

@@ -1,0 +1,19 @@
+---
+import LayoutLink from '@layouts/LayoutLink.astro'
+import GH from '@components/Logos/Github.astro'
+
+import links from '@components/links'
+---
+
+<LayoutLink title='Github de Nico' nombre='Github' link={links.github}>
+	<div>
+        <GH />
+    </div>
+</LayoutLink>
+
+<style>
+    div{
+        display: inline-block;
+        transform: scale(2);
+    }
+</style>

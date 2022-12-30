@@ -1,0 +1,19 @@
+---
+import LayoutLink from '@layouts/LayoutLink.astro'
+import Tiktok from '@components/Logos/Tiktok.astro'
+
+import links from '@components/links'
+---
+
+<LayoutLink title='Tiktok de Nico' nombre='Tiktok' link={links.tiktok}>
+	<div>
+        <Tiktok />
+    </div>
+</LayoutLink>
+
+<style>
+    div{
+        display: inline-block;
+        transform: scale(2);
+    }
+</style>

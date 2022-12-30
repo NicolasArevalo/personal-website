@@ -1,0 +1,19 @@
+---
+import LayoutLink from '@layouts/LayoutLink.astro'
+import Podcast from '@components/Logos/5.astro'
+
+import links from '@components/links'
+---
+
+<LayoutLink title='5MENTARIOS podcast' nombre='5MENTARIOS podcast' link={links.anchor}>
+	<div>
+        <Podcast />
+    </div>
+</LayoutLink>
+
+<style>
+    div{
+        display: inline-block;
+        transform: scale(2);
+    }
+</style>
