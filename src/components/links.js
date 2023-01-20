@@ -21,6 +21,7 @@ const links = {
     tiktok: 'https://www.tiktok.com/@_niiico28',
     bmac: 'https://www.buymeacoffee.com/lunago28',
     paypal: 'https://paypal.me/lunag0',
-    feedback: 'https://ee16cq4xsv8.typeform.com/to/r86IXIQz'
+    feedback: 'https://ee16cq4xsv8.typeform.com/to/r86IXIQz',
+    musica: 'https://musica.niiico.com'
 }
 export default links;
