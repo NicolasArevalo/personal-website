@@ -53,7 +53,7 @@ import links from '@components/links'
 					d='M391.17,103.47H352.54v109.7h38.63ZM285,103H246.37V212.75H285ZM120.83,0,24.31,91.42V420.58H140.14V512l96.53-91.42h77.25L487.69,256V0ZM449.07,237.75l-77.22,73.12H294.61l-67.6,64v-64H140.14V36.58H449.07Z'
 				></path>
 			</svg>
-			<h5>Andamos en Twitch</h5>
+			<h5>Último streaming</h5>
 		</a>
 	</div>
 </section>
@@ -63,10 +63,10 @@ import links from '@components/links'
 		max-width: 100%;
 		margin: 1rem 0;
 		padding: 15px 20px;
-		border-radius: var(--br);
+		/* 
 		background-image: linear-gradient(to top, #f6f0fd 0%, #fbf8ff 100%);
 		box-shadow: var(--shadow-buena);
-		position: relative;
+		position: relative; */
 	}
 
 	div {
@@ -82,7 +82,19 @@ import links from '@components/links'
 		flex-direction: column;
 		align-items: center;
 		gap: 18px;
-		padding: 10px 5px;
+		width: 150px;
+		background-image: linear-gradient(to top, #f6f0fd 0%, #fbf8ff 100%);
+		border-radius: var(--br);
+		padding: 20px 20px;
+		box-shadow: var(--shadow-buena);
+		text-align: center;
+		transition: box-shadow var(--transition-time) ease;
+	}
+	a:hover{
+		box-shadow: var(--shadow-buena-hovered);
+	}
+	a>svg:hover{
+		background-color: transparent;
 	}
 	h5 {
 		font-size: large;
