@@ -4,7 +4,7 @@ import links from '@components/links'
 
 <section>
 	<div>
-		<a href={links.anchor}>
+		<a href={links.anchor} target='_blank'>
 			<svg
 				class='logo'
 				version='1.1'
@@ -34,17 +34,17 @@ import links from '@components/links'
 					</g>
 				</g>
 			</svg>
-			<h5>Nuevo capítulo</h5>
+			<h5>Hay nuevo capítulo del podcast</h5>
 		</a>
-		<a href={links.musica}>
+		<a href={links.musica} target='_blank'>
 			<svg class='logo' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'
 				><title>Musiiica</title><path
 					d='M499.1 6.3c8.1 6 12.9 15.6 12.9 25.7v72V368c0 44.2-43 80-96 80s-96-35.8-96-80s43-80 96-80c11.2 0 22 1.6 32 4.6V147L192 223.8V432c0 44.2-43 80-96 80s-96-35.8-96-80s43-80 96-80c11.2 0 22 1.6 32 4.6V200 128c0-14.1 9.3-26.6 22.8-30.7l320-96c9.7-2.9 20.2-1.1 28.3 5z'
 				></path>
 			</svg>
-			<h5>Musiiica</h5>
+			<h5>Entra a mi web Musiiica (en desarrollo)</h5>
 		</a>
-		<a href={links.twitch}>
+		<a href={links.twitch} target='_blank'>
 			<svg class='logo' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'
 				><title>
 					Twitch
@@ -53,21 +53,61 @@ import links from '@components/links'
 					d='M391.17,103.47H352.54v109.7h38.63ZM285,103H246.37V212.75H285ZM120.83,0,24.31,91.42V420.58H140.14V512l96.53-91.42h77.25L487.69,256V0ZM449.07,237.75l-77.22,73.12H294.61l-67.6,64v-64H140.14V36.58H449.07Z'
 				></path>
 			</svg>
-			<h5>Último streaming</h5>
+			<h5>Último streaming en twitch jugando (probablemente)</h5>
 		</a>
 	</div>
 </section>
 
 <style>
+	div {
+		display: flex;
+		flex-flow: column wrap;
+	}
+	a {
+		width: 100%;
+		margin: 1rem 0;
+		padding: 2rem 1rem;
+		background: var(--color-gray-50);
+		box-shadow: var(--shadow-buena);
+		border-radius: var(--br);
+
+		display: flex;
+		align-items: baseline;
+
+		transition: border var(--transition-time) ease;
+
+		border: 2px solid white;
+		background: linear-gradient(white, white) padding-box,
+			linear-gradient(
+					to bottom right,
+					rgba(var(--color-purple-rgb), 0.6),
+					rgba(var(--color-purple-rgb), 0.2)
+				)
+				border-box;
+	}
+	a:hover {
+		border: 2px solid transparent;
+
+		/* box-shadow: var(--shadow-buena-hovered); */
+	}
+
 	section {
 		max-width: 100%;
 		margin: 1rem 0;
-		padding: 15px 20px;
-		/* 
-		background-image: linear-gradient(to top, #f6f0fd 0%, #fbf8ff 100%);
-		box-shadow: var(--shadow-buena);
-		position: relative; */
+		padding: 15px 0;
 	}
+	svg {
+		margin: 0 1rem;
+		transform: scale(2) !important;
+	}
+	a > svg:hover {
+		background-color: transparent;
+	}
+	h5 {
+		padding-left: 0.7rem;
+		margin: auto 0;
+	}
+	/* 	
 
 	div {
 		display: flex;
@@ -110,7 +150,5 @@ import links from '@components/links'
 			font-size: medium;
 		}
 	}
-	svg {
-		transform: scale(2) !important;
-	}
+	 */
 </style>
