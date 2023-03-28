@@ -1,0 +1,110 @@
+---
+import Basic from '@layouts/Basic.astro'
+import links from '@components/links'
+---
+
+<Basic
+	title='Voz'
+	description='En esta sección presento las cosas que hago con mi voz: publicidad, canciones y eso.'
+>
+	<h1>5MENTARIOS podcast</h1>
+	<p>
+		Tengo un <b>podcast</b> donde leo libros. Lo cree de hecho con el ánimo de leer
+		más, de comprometerme conmigo mismo a leer Y al final le ha terminado gustando
+		a más gente de la que pensaba.
+	</p>
+	<p>Está disponible en</p>
+	<div class="disponibilidad">
+		<a href='https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy82MDI5MTEyNC9wb2RjYXN0L3Jzcw=='
+			>Google podcast</a>
+		<a href='https://pca.st/4qpf1umv'>Pocket podcast</a>
+		<a href='https://radiopublic.com/5mentarios-podcast-G7M4rp'>RadioPublic</a>
+		<a href='https://open.spotify.com/show/1gFBa3gI7d9FTKTB6KRY6e'>Spotify</a>
+		<a href='https://anchor.fm/s/60291124/podcast/rss'>RSS</a>
+	</div>
+	<div class='contenedor podcast'>
+		<p for='iframe'>Capitulo con +2k reproducciones</p>
+		<iframe
+		src='https://anchor.fm/nicols-arvalo/embed/episodes/El-coronel-no-tiene-quien-le-escriba-PARTE-I---Gabriel-Garca-Mrquez-e16gk4t'
+		class='muestraPodcast'
+		frameborder='0'
+		scrolling='no'
+		id='iframe'></iframe>
+	</div>
+</Basic>
+<style>
+	.disponibilidad{
+		display: flex;
+		flex-direction: row;
+		gap: 0.5rem;
+	}
+	.disponibilidad a {
+		
+		
+		padding: 0.5rem 1rem;
+		background: var(--color-gray-50);
+		/* box-shadow: var(--shadow-buena); */
+		border-radius: var(--br);
+
+		display: flex;
+		align-items: baseline;
+
+		transition: border var(--transition-time) ease;
+
+		border: 1px solid var(--color-gray-200);
+		background: linear-gradient(white, white) padding-box,
+			linear-gradient(
+					to bottom right,
+					rgba(var(--color-purple-rgb), 0.6),
+					rgba(var(--color-purple-rgb), 0.2)
+				)
+				border-box;
+	}
+	a:hover {
+		border: 1px solid transparent;
+	}
+
+
+	.podcast {
+		flex-flow: column wrap;
+	}
+
+	.podcast small {
+		color: var(--color-gray-400);
+	}
+
+	.muestra {
+		margin: 1rem 0;
+		padding-inline-start: 40px;
+		width: var(--ancho-muestras);
+	}
+	.muestraPodcast {
+		margin: 0.5rem 0 0 0;
+		width: 100%;
+		height: auto;
+	}
+	p {
+		margin-top: 1rem;
+	}
+	a {
+		font-style: normal;
+		
+		color: inherit;
+	}
+	@media (max-width: 760px) {
+		:root {
+			--ancho-muestras: 100%;
+		}
+
+		.contenedor {
+			flex-flow: column wrap;
+		}
+
+		.muestra {
+			padding-inline-start: 0px;
+		}
+		.disponibilidad {
+			flex-direction: column;
+		}
+	}
+</style>

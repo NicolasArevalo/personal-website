@@ -1,0 +1,54 @@
+---
+import Basic from '@layouts/Basic.astro'
+import links from '@components/links'
+
+import tyba from './assets/tyba.png'
+import tybaAudio from './assets/tyba.mp3'
+---
+
+<Basic
+	title='Voz'
+	description='En esta sección presento las cosas que hago con mi voz: publicidad, canciones y eso.'
+>
+	<h1>Publicidad</h1>
+	<p>
+		La parte <b>publicitaria</b> creo que me sale bien a pesar de no saber mucho,
+		esa la puedes ver en <a href={links.voice}>Voice 123</a>.
+		O...
+	</p>
+
+	<div class="publicidades">
+		<div class="contenedor">
+			<img src={tyba} alt="Tyba">
+			<audio src={tybaAudio} controls></audio>
+		</div>
+	</div>
+</Basic>
+<style>
+	.voice123 {
+		border: none;
+		height: 90px;
+		overflow: hidden;
+	}
+	.publicidades{
+		display: flex;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+	}
+	.contenedor{
+		display: flex;
+		flex-direction: column;
+		margin: 1rem 0;
+	}
+	img{
+		width: 300px;
+	}
+	p {
+		margin-top: 1rem;
+	}
+	a {
+		font-style: normal;
+		text-decoration: underline;
+		color: inherit;
+	}
+</style>

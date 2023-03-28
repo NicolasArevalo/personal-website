@@ -3,6 +3,6 @@ import preact from '@astrojs/preact';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://niiico.com/',
-	integrations: [preact()],
+  site: 'https://niiico.com/',
+  integrations: [preact()]
 });

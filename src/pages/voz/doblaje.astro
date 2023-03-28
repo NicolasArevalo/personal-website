@@ -1,0 +1,38 @@
+---
+import Basic from '@layouts/Basic.astro'
+import links from '@components/links'
+---
+
+<Basic
+	title='Voz'
+	description='En esta sección presento las cosas que hago con mi voz: publicidad, canciones y eso.'
+>
+	<h1>Doblaje</h1>
+	<p>Me gusta hacer <b>doblaje</b>. Quiero hacer más pero por ahora tengo estas:</p>
+	<div class='contenedor'>
+		<iframe
+			class='muestra yt'
+			src='https://www.youtube.com/embed/SMMAwjtw_lU?start=30'
+			title='YouTube video player'
+			frameborder='0'
+			allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+			allowfullscreen></iframe>
+		<iframe
+			class='muestra yt'
+			src='https://www.youtube.com/embed/NfGxiv_oV84'
+			title='YouTube video player'
+			frameborder='0'
+			allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+			allowfullscreen></iframe>
+	</div>
+</Basic>
+<style>
+	p {
+		margin: 1rem 0;
+	}
+	a {
+		font-style: normal;
+		text-decoration: underline;
+		color: inherit;
+	}
+</style>
