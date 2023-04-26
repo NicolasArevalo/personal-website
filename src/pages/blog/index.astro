@@ -7,8 +7,9 @@ let title = 'Blog';
 let description = 'Hola! Soy Nicolás. Soy ingeniero de software y desarrollador web, aunque me gustan muchas más cosas que puedes conocer en un solo lugar: aquí.';
 
 // Data Fetching: List all Markdown posts in the repo.
-
-let allPosts = await Astro.glob('./*.md');
+/* const mdPosts = await Astro.glob('./*.md');
+ */const mdxPosts = await Astro.glob('./*.md');
+let allPosts = [...mdxPosts, /* ...mdPosts */];
 allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
 
 ---

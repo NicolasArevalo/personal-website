@@ -1,7 +1,4 @@
 ---
-setup: |
-  import Layout from '../../layouts/BlogPost.astro'
-  import Cool from '../../components/Author.astro'
 title: ¿Qué es la belleza? 🪞
 publishDate: 31 Oct 2017
 name: Nicolás Arévalo
