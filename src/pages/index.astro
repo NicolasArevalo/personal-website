@@ -8,6 +8,7 @@ import Footer from '@components/Footer.astro';
 import MiniBlogPrev from '@components/MiniBlogPrev.astro';
 import Slider from '@components/Slider.astro';
 import LoNuevo from '@components/LoNuevo.astro';
+import SobreMi from '@pages/sobre-mi.astro';
 
 import photo from '@assets/recortadayo.webp';
 
@@ -87,7 +88,7 @@ const host = links.host
 			gap: 1em;
 			height: auto;
 			align-items: center;
-			justify-content: space-between;
+			justify-content: space-around;
 			padding: 1em;
 		}
 
@@ -171,7 +172,7 @@ const host = links.host
 </head>
 
 <body>
-	<Banner />
+	<!-- <Banner /> -->
 	<NavBar />
 	<div class="wrapper">
 		<main class="content">
@@ -184,14 +185,15 @@ const host = links.host
 		<section class="wrapper-navegacion" aria-label="navegacion">
 
 			<a href={host+'/blog'} class="hl">Escribir</a>
-			<a href={host+'/sobre-mi'} class="hl">Ver películas</a>
+			<!-- <a href={host+'/sobre-mi'} class="hl">Ver películas</a> -->
 			<a href={host+'/profesional'} class="hl">Crear páginas web</a>
 			<a href={host+'/voz'} class="hl">Rapear</a>
 			<a href={host+'/contacto'} class="hl">Charlar</a>
 
 		</section>
-		<LoNuevo />
-		<MiniBlogPrev />
+		<SobreMi />
+		<!-- <LoNuevo /> -->
+		<!-- <MiniBlogPrev /> -->
 		<section class="wrapper-fotos" aria-label="">
 			<h4>Fotos que he tomado...</h4>
 			<Slider>

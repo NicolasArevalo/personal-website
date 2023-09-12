@@ -1,5 +1,6 @@
 const links = {
     host: '',
+    blog:'https://nicolasarevalo.notion.site/Escritos-17d1519825de41088f2a38804b4e9bc2?pvs=4',
     youtube: 'https://www.youtube.com/@_niiico',
     notion: 'https://nico.ghost.io',
     instagram: 'https://www.instagram.com/_niiico28',

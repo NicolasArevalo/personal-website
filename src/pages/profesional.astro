@@ -11,6 +11,7 @@ import Udw from '@components/pdfs/udw.pdf'
 import Id from '@components/pdfs/id.pdf'
 import Pjs from '@components/pdfs/pjs.pdf'
 import cv from '@components/pdfs/cv.pdf'
+import inge from '@components/pdfs/inge.pdf'
 
 /* Logos */
 
@@ -30,29 +31,29 @@ import Socketio from '@components/Logos/socketio.astro'
 ---
 
 <script is:inline>
-	function justOne(el) {
-		const contenidoRAW = document.querySelectorAll('.contenido')
-		const contenido = [...contenidoRAW]
+function justOne(el) {
+	const contenidoRAW = document.querySelectorAll('.contenido')
+	const contenido = [...contenidoRAW]
 
-		if (el === 1) {
-			contenido[0].classList.toggle('show')
-			contenido[1].classList.remove('show')
+	if (el === 1) {
+		contenido[0].classList.toggle('show')
+		contenido[1].classList.remove('show')
 
-			titulo1.classList.remove('muted')
-			titulo2.classList.add('muted')
-		}
-		if (el === 2) {
-			contenido[0].classList.remove('show')
-			contenido[1].classList.toggle('show')
-
-			titulo1.classList.add('muted')
-			titulo2.classList.remove('muted')
-		}
+		titulo1.classList.remove('muted')
+		titulo2.classList.add('muted')
 	}
+	if (el === 2) {
+		contenido[0].classList.remove('show')
+		contenido[1].classList.toggle('show')
 
-	function openCv() {
-		window.open(`${cv}`, '_blank')
+		titulo1.classList.add('muted')
+		titulo2.classList.remove('muted')
 	}
+}
+
+function openCv() {
+	window.open(`${cv}`, '_blank')
+}
 </script>
 
 <Basic
@@ -79,15 +80,25 @@ import Socketio from '@components/Logos/socketio.astro'
 
 	<div class='breadcrumb'>
 		<div class='titulo' onclick='justOne(1)'>
-			<h2 id='titulo1' class=''>Proyectos realizados</h2>
+					<h2 id='titulo1' class=''>Proyectos realizados</h2>
 		</div>
 		<div class='titulo' onclick='justOne(2)'>
-			<h2 id='titulo2' class='muted'>Títulaciones</h2>
+					<h2 id='titulo2' class='muted'>Títulaciones</h2>
 		</div>
 	</div>
 
 	<section>
 		<div class='contenido uno show'>
+			<div class='warning'>
+				<h3>⚠️ Upss!</h3>
+				<p>
+					Los últimos meses he estado trabajando en algo diferente a esto, por
+					lo que probablemente algunos proyectos no estén habilitados porque los
+					servidores gratiutos sin usarse se apagan. Si estás
+					interesado en ver los proyectos en producción solo házmelo saber para
+					encender los servidores 😉.
+				</p>
+			</div>
 			<article>
 				<a href='https://webchat-production.up.railway.app'>
 					<h3>
@@ -142,7 +153,7 @@ import Socketio from '@components/Logos/socketio.astro'
 				</div>
 			</article>
 			<article>
-				<a href='https://explounas.com'>
+				<a href='https://explounas2.vercel.app/'>
 					<h3>
 						Explouñas 💅🏼
 						<Html />
@@ -157,7 +168,7 @@ import Socketio from '@components/Logos/socketio.astro'
 				</p>
 				<div class='media'>
 					<div class='tecnologias'>
-						<a class='boton' href='https://explounas.com'><Link /> Visitar</a>
+						<a class='boton' href='https://explounas2.vercel.app/'><Link /> Visitar</a>
 						<a class='boton' href='https://github.com/nicolasarevalo/explounas'
 							><Github /> Código</a
 						>
@@ -272,6 +283,11 @@ import Socketio from '@components/Logos/socketio.astro'
 	<section>
 		<div class='contenido dos'>
 			<span>
+				<a target='_blank' href={inge}>
+					<Pdf /> Ingeniero de Software
+				</a>
+			</span>
+			<span>
 				<a target='_blank' href={Tecnico}>
 					<Pdf /> Técnico en sistemas (SENA)
 				</a>
@@ -303,6 +319,30 @@ import Socketio from '@components/Logos/socketio.astro'
 </Basic>
 
 <style>
+	.warning {
+		display: flex;
+		flex-direction: column;
+		font-size: medium;
+		margin: 0.5rem 2rem 2rem 2rem;
+		padding: 0.7rem;
+		border-radius: var(--br);
+		background-color: var(--color-gray-200);
+	}
+	.warning span {
+		font-size: xx-large;
+	}
+
+	.warning h3 {
+		font-size: large;
+		margin: 0;
+		padding: 0;
+		font-weight: bold;
+		margin-bottom: 6px;
+	}
+	.warning p{
+		line-height: 23px;
+	}
+
 	.botonera {
 		text-align: center;
 		margin: 1.4rem 0;

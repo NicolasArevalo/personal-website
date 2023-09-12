@@ -14,7 +14,7 @@
 	--color-gray-100: #f5f5f5;
 	--color-gray-200: #e5e7eb;
 	--color-gray-300: #d1d5db;
-	--color-gray-300: 209, 213, 219;
+	--color-gray-300-rgb: 209, 213, 219;
 	--color-gray-400: #9ca3af;
 	--color-gray-400: 156, 163, 175;
 	--color-gray-500: #747982;
@@ -40,7 +40,7 @@
 	--color-yellow-rgb: 255, 190, 45;
 
 	--br: 6px;
-	--hoverchido: rgba(var(--color-gray-300), .3);
+	--hoverchido: rgba(var(--color-gray-300-rgb), .3);
 	--border: 1px solid var(--color-gray-800);
 	--animation: 0.08s linear;
 	--btn-padding: 6px 8px;

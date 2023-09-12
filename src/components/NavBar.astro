@@ -2,7 +2,7 @@
 import Github from "@components/Logos/Github.astro";
 import Twitter from "@components/Logos/Twitter.astro";
 import Five from "@components/Logos/5.astro";
-const host = ''
+import links from "./links";
 ---
 
 <script is:inline>
@@ -52,12 +52,12 @@ const host = ''
 				<span></span>
 			</label>
 			<ul class="menu__box">
-				<li><a class="menu__item" href={host+'/'}>Inicio</a></li>
-				<li><a class="menu__item" href={host+'/blog/'}>Blog</a></li>
-				<li><a class="menu__item" href={host+'/sobre-mi/'}>Sobre mí</a></li>
-				<li><a class="menu__item" href={host+'/profesional/'}>Profesional</a></li>
-				<li><a class="menu__item" href={host+'/voz/'}>Voz</a></li>
-				<li><a class="menu__item" href={host+'/contacto/'}>Contacto</a></li>
+				<li><a class="menu__item" href={links.host+'/'}>Inicio</a></li>
+				<li><a class="menu__item" href={links.blog}>Blog</a></li>
+				<!-- <li><a class="menu__item" href={links.host+'/sobre-mi/'}>Sobre mí</a></li> -->
+				<li><a class="menu__item" href={links.host+'/profesional/'}>Profesional</a></li>
+				<li><a class="menu__item" href={links.host+'/voz/'}>Voz</a></li>
+				<li><a class="menu__item" href={links.host+'/contacto/'}>Contacto</a></li>
 
 				<div class="nav__logos fixed">
 					<Twitter />
@@ -246,7 +246,7 @@ const host = ''
 	
 	li a{
 		font-weight: 600;
-		border-bottom: 1px solid rgba(var(--color-gray-300), .3);
+		border-bottom: 1px solid rgba(var(--color-gray-300-rgb), .3);
 	}
 
 	#menu__toggle {
