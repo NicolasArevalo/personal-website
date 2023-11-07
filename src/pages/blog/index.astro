@@ -1,6 +1,6 @@
 ---
-import BlogPostPreview from '../../components/BlogPostPreview.astro';
-import Basic from '../../layouts/Basic.astro';
+import LayoutLink from '@layouts/LayoutLink.astro'
+import links from '@components/links'
 
 // Component Script:
 let title = 'Blog';
@@ -13,25 +13,16 @@ let allPosts = [...mdxPosts, /* ...mdPosts */];
 allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
 
 ---
-<Basic title={title} description={description}>
-
-	<main class="content">
-		<h1>Mis publicaciones ({allPosts.length})</h1>
-		<section aria-label="Blog post list">
-			{allPosts.map((p) => <BlogPostPreview post={p} />)}
-		</section>
-	</main>
-
-</Basic>
+<LayoutLink title='Blog de Nico' nombre='Blog' link={links.blog}>
+	<div>
+        Blog
+    </div>
+</LayoutLink>
 
 <style>
-	.content{
-		margin-top: 1.3em;
-	}
-	@media (max-width: 760px){
-		h1{
-			font-size: 2.4em;
-		}
-	}
+    div{
+        display: inline-block;
+        transform: scale(2);
+    }
 </style>
 
