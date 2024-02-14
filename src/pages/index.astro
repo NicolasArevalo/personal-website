@@ -1,16 +1,16 @@
 ---
 // Component Imports
-import BaseHead from '@components/BaseHead.astro';
-import NavBar from '@components/NavBar.astro';
-import Banner from '@components/Banner.astro';
-import links from '@components/links';
-import Footer from '@components/Footer.astro';
-import MiniBlogPrev from '@components/MiniBlogPrev.astro';
-import Slider from '@components/Slider.astro';
-import LoNuevo from '@components/LoNuevo.astro';
-import SobreMi from '@pages/sobre-mi.astro';
+import BaseHead from '@components/BaseHead.astro'
+import NavBar from '@components/NavBar.astro'
+import Banner from '@components/Banner.astro'
+import links from '@components/links'
+import Footer from '@components/Footer.astro'
+import MiniBlogPrev from '@components/MiniBlogPrev.astro'
+import Slider from '@components/Slider.astro'
+import LoNuevo from '@components/LoNuevo.astro'
+import SobreMi from '@pages/sobre-mi.astro'
 
-import photo from '@assets/recortadayo.webp';
+import photo from '@assets/recortadayo.webp'
 
 /* Slider imgs */
 import img1 from '@assets/slider-home/ventana.webp'
@@ -26,194 +26,225 @@ import img10 from '@assets/slider-home/rivera.webp'
 import img11 from '@assets/slider-home/palermo.webp'
 
 // Component Script:
-let title = 'Nicolás Arévalo';
-let description = 'Soy ingeniero de software enfocado ahora en desarrollo web; aunque me gustan muchas más cosas que puedes conocer aquí.';
+let title = 'Nicolás Arévalo'
+let description =
+	'Soy ingeniero de software enfocado ahora en desarrollo web; aunque me gustan muchas más cosas que puedes conocer aquí.'
 
 const host = links.host
-
 ---
 
 <script is:inline>
 	console.log('mano no mires la consola, qué quieres hacer? 😐')
 </script>
-<html lang="es">
+<html lang='es'>
+	<head>
+		<BaseHead title={title} description={description} />
 
-<head>
-	<BaseHead title={title} description={description} />
+		<style>
+			.badge{
+				position: absolute;
+				top: -5px;
+				left: -15px;
+				color: rgb(240, 240, 240);
+				background-color: rgba(
+					var(--theme-accent-rgb),
+					1
+				);
+				font-weight: bold;
+				border-radius: var(--br);
+				padding: 3px 2px;
+				font-size: small;
+				transform: rotate(345deg);
+			}
+			.muestraPodcastPadre{
+				position: relative;
+				display: block;
+				margin-top: 2.3rem;
+				max-height: 125px;
+			}
+			.muestraPodcast {
+				margin: 0.5rem 0 0 0;
+				width: 100%;
+				height: auto;
+			}
+			.content {
+				margin-top: 1rem;
+			}
 
-	<style>
-		.content {
-			margin-top: 1rem;
-		}
+			.intro {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				padding-bottom: 2rem;
+			}
 
-		.intro {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			padding-bottom: 2rem;
-		}
+			.intro > * {
+				margin: 0;
+			}
 
-		.intro>* {
-			margin: 0;
-		}
+			h1 {
+				text-align: center;
+				padding-bottom: 0.5em;
+			}
 
-		h1 {
-			text-align: center;
-			padding-bottom: .5em;
-		}
+			ul {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				width: max(60px, 300px);
+			}
 
-		ul {
-			display: flex;
-			flex-direction: row;
-			flex-wrap: wrap;
-			justify-content: space-between;
-			width: max(60px, 300px);
-		}
-
-		li {
-			list-style: none;
-		}
-
-		.yo {
-			width: 200px;
-			clip-path: circle(48% at 50% 50%);
-		}
-
-		.wrapper-navegacion {
-			position: relative;
-			display: flex;
-			flex-direction: row;
-			flex-wrap: wrap;
-			width: 100%;
-			gap: 1em;
-			height: auto;
-			align-items: center;
-			justify-content: space-around;
-			padding: 1em;
-		}
-
-		.hl {
-			position: relative;
-		}
-
-		.hl::after {
-			content: '';
-			position: absolute;
-			bottom: .2rem;
-			left: 0;
-			right: 0;
-			width: 100%;
-			height: 30%;
-			background-color: rgba(var(--theme-accent-rgb), var(--theme-accent-opacity));
-			z-index: -1;
-			transition: height .3s;
-			border-radius: var(--br);
-		}
-
-		.hl:hover::after {
-			height: 70%;
-		}
-
-		@media(max-width: 760px) {
-			.wrapper-navegacion {
-				justify-content: center;
+			li {
+				list-style: none;
 			}
 
 			.yo {
-				width: 150px;
+				width: 200px;
+				clip-path: circle(48% at 50% 50%);
 			}
 
-			.content {
-				margin-top: 0rem;
+			.wrapper-navegacion {
+				position: relative;
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				width: 100%;
+				gap: 1em;
+				height: auto;
+				align-items: center;
+				justify-content: space-around;
+				padding: 1em;
 			}
-		}
 
-		.wrapper-navegacion::after {
-			content: '';
-			border-radius: var(--br);
-			z-index: -1;
-			position: absolute;
-			top: -.1em;
-			bottom: 0;
-			left: -.4em;
-			right: 0;
-			border: 3px ridge rgba(var(--theme-accent-rgb), var(--theme-accent-opacity));
-			width: 100%;
-			height: 100%;
-			animation: beating 3s alternate .8s infinite;
-		}
-
-		@keyframes beating {
-
-			100% {
-				opacity: 0;
-				transform: scaleX(1.05) scaleY(1.1);
+			.hl {
+				position: relative;
 			}
-		}
 
-		.wrapper-navegacion a {
-			font-weight: bold;
-		}
+			.hl::after {
+				content: '';
+				position: absolute;
+				bottom: 0.2rem;
+				left: 0;
+				right: 0;
+				width: 100%;
+				height: 30%;
+				background-color: rgba(
+					var(--theme-accent-rgb),
+					var(--theme-accent-opacity)
+				);
+				z-index: -1;
+				transition: height 0.3s;
+				border-radius: var(--br);
+			}
 
-		.logo {
-			width: 1rem;
-			height: 1rem;
-		}
+			.hl:hover::after {
+				height: 70%;
+			}
 
-		small {
-			text-align: center;
-			width: 100%;
-		}
+			@media (max-width: 760px) {
+				.wrapper-navegacion {
+					justify-content: center;
+				}
 
-		.wrapper-fotos {
-			margin-top: 3em;
-		}
-	</style>
-</head>
+				.yo {
+					width: 150px;
+				}
 
-<body>
-	<!-- <Banner /> -->
-	<NavBar />
-	<div class="wrapper">
-		<main class="content">
-			<section class="intro">
-				<img src={photo} class="yo" alt="Nicolás Arévalo">
-				<h1 class="latest">{title}</h1>
-				<p>{description} Me gusta: </p>
+				.content {
+					margin-top: 0rem;
+				}
+			}
+
+			.wrapper-navegacion::after {
+				content: '';
+				border-radius: var(--br);
+				z-index: -1;
+				position: absolute;
+				top: -0.1em;
+				bottom: 0;
+				left: -0.4em;
+				right: 0;
+				border: 3px ridge
+					rgba(var(--theme-accent-rgb), var(--theme-accent-opacity));
+				width: 100%;
+				height: 100%;
+				animation: beating 3s alternate 0.8s infinite;
+			}
+
+			@keyframes beating {
+				100% {
+					opacity: 0;
+					transform: scaleX(1.05) scaleY(1.1);
+				}
+			}
+
+			.wrapper-navegacion a {
+				font-weight: bold;
+			}
+
+			.logo {
+				width: 1rem;
+				height: 1rem;
+			}
+
+			small {
+				text-align: center;
+				width: 100%;
+			}
+
+			.wrapper-fotos {
+				margin-top: 3em;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- <Banner /> -->
+		<NavBar />
+		<div class='wrapper'>
+			<main class='content'>
+				<section class='intro'>
+					<img src={photo} class='yo' alt='Nicolás Arévalo' />
+					<h1 class='latest'>{title}</h1>
+					<p>{description} Me gusta:</p>
+				</section>
+			</main>
+			<section class='wrapper-navegacion' aria-label='navegacion'>
+				<a href={links.blog} class='hl'>Escribir</a>
+				<!-- <a href={host+'/sobre-mi'} class="hl">Ver películas</a> -->
+				<a href={host + '/profesional'} class='hl'>Crear páginas web</a>
+				<a href={host + '/voz'} class='hl'>Hablar</a>
+				<a href={host + '/contacto'} class='hl'>Conversar</a>
 			</section>
-		</main>
-		<section class="wrapper-navegacion" aria-label="navegacion">
-
-			<a href={links.blog} class="hl">Escribir</a>
-			<!-- <a href={host+'/sobre-mi'} class="hl">Ver películas</a> -->
-			<a href={host+'/profesional'} class="hl">Crear páginas web</a>
-			<a href={host+'/voz'} class="hl">Rapear</a>
-			<a href={host+'/contacto'} class="hl">Charlar</a>
-
-		</section>
-
-		<SobreMi />
-		<!-- <LoNuevo /> -->
-		<!-- <MiniBlogPrev /> -->
-		<section class="wrapper-fotos" aria-label="">
-			<h4>Fotos que he tomado...</h4>
-			<Slider>
-				<img class="slider__img sliding" src={img5} alt="">
-				<img class="slider__img sliding" src={img7} alt="">
-				<img class="slider__img sliding" src={img3} alt="">
-				<img class="slider__img sliding" src={img8} alt="">
-				<img class="slider__img sliding" src={img4} alt="">
-				<img class="slider__img sliding" src={img11} alt="">
-				<img class="slider__img sliding" src={img6} alt="">
-				<img class="slider__img sliding" src={img2} alt="">
-				<img class="slider__img sliding" src={img1} alt="">
-				<img class="slider__img sliding" src={img9} alt="">
-				<img class="slider__img sliding" src={img10} alt="">
-			</Slider>
-		</section>
-
-	</div>
-	<Footer />
-</body>
-
+			<div class="muestraPodcastPadre">
+				<span class="badge">¡Nuevo!</span>
+				<iframe
+					src='https://podcasters.spotify.com/pod/show/nicols-arvalo/embed'
+					class='muestraPodcast'
+					frameborder='0'
+					scrolling='no'></iframe>
+			</div>
+			<SobreMi />
+			<!-- <LoNuevo /> -->
+			<!-- <MiniBlogPrev /> -->
+			<section class='wrapper-fotos' aria-label=''>
+				<h4>Fotos que he tomado...</h4>
+				<Slider>
+					<img class='slider__img sliding' src={img5} alt='' />
+					<img class='slider__img sliding' src={img7} alt='' />
+					<img class='slider__img sliding' src={img3} alt='' />
+					<img class='slider__img sliding' src={img8} alt='' />
+					<img class='slider__img sliding' src={img4} alt='' />
+					<img class='slider__img sliding' src={img11} alt='' />
+					<img class='slider__img sliding' src={img6} alt='' />
+					<img class='slider__img sliding' src={img2} alt='' />
+					<img class='slider__img sliding' src={img1} alt='' />
+					<img class='slider__img sliding' src={img9} alt='' />
+					<img class='slider__img sliding' src={img10} alt='' />
+				</Slider>
+			</section>
+		</div>
+		<Footer />
+	</body>
 </html>
